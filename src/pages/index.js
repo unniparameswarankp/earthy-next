@@ -101,7 +101,7 @@ const Home = () => {
         <figure><img src={bannerImage.src} alt="Banner" /></figure>
         <div className="container">
           <h1 ref={titleRef}>Tough on Dirt. Gentle on Nature.</h1>
-          <p ref={descRef}>Lorem Ipsum has been the industry's standard dummy text since the 1500s Lorem Ipsum has been the industry's standard dummy text since the 1500s.</p>
+          <p ref={descRef}>Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s.</p>
           <a href="#" className="btn-1 white">
             View Products
             <svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg>
@@ -127,10 +127,10 @@ const Home = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">
                     <path d="..." fill="#fff" />
                   </svg>
-                </div>
+                </div> ̰
                 <div className="wrap">
                   <div ref={textRef}>
-                    <h6>Lorem Ipsum has been the industry's standard dummy text since the 1500s Lorem Ipsum has been the industry's standard dummy text since the 1500s.</h6>
+                    <h6>Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s.</h6>
                     <div className="desc3">It was popularised in the 1960s with the release of Letraset sheets It was popularised in the 1960s with the release of Letraset sheets It was popularised in the 1960s with the release of Letraset sheets</div>
                   </div>
                   <img className="icon-leaf-2" src={iconImage.src} alt="Leaf Icon" />
@@ -142,14 +142,14 @@ const Home = () => {
       </section>
 
       <div className="payoff-wrapper">
-        <div ref={textHorizondalRef}  class="payoff-text text-primary ogg-400">
-        Tough on Dirt. <span class="text-secondary">Gentle on Nature.</span>
+        <div ref={textHorizondalRef}  className="payoff-text text-primary ogg-400">
+        Tough on Dirt. <span className="text-secondary">Gentle on Nature.</span>
         </div>
       </div>
       <div className="home-video">
         <div className="container">
           <div className="embed-responsive embed-responsive-16by9">
-            <iframe src="https://player.vimeo.com/video/656958665?h=ad6920d100" class="_iub_cs_activate _iub_cs_activate-activated" data-iub-purposes="1" data-cmp-ab="2" data-cmp-info="8" async="false"></iframe>
+            <iframe src="https://player.vimeo.com/video/656958665?h=ad6920d100" className="_iub_cs_activate _iub_cs_activate-activated" data-iub-purposes="1" data-cmp-ab="2" data-cmp-info="8" async="false"></iframe>
           </div>
         </div>
       </div>
@@ -158,11 +158,11 @@ const Home = () => {
          <div className="row position-relative">
           <div className="col-md-8">
              <div ref={textRef2} className="text-bk">
-                <svg class="bubble-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">                         <path id="bubble-01" d="M727.546,58.656c310.955,0,449.911,393.087,420.51,513.555s-406.925,561.318-765.145,461.58S-18.559,637.168-.059,417.165,416.591,58.656,727.546,58.656Z" transform="translate(3.614 -58.656)" fill="#fff"></path>                     </svg>
+                <svg className="bubble-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">                         <path id="bubble-01" d="M727.546,58.656c310.955,0,449.911,393.087,420.51,513.555s-406.925,561.318-765.145,461.58S-18.559,637.168-.059,417.165,416.591,58.656,727.546,58.656Z" transform="translate(3.614 -58.656)" fill="#fff"></path>                     </svg>
                 <div className="wrap">
                   <h2>I nostri ulivi</h2>
                   <h5>il tesoro della nostra terra</h5>
-                  <p>L’ulivo è una pianta antica e carica di rimandi simbolici e culturali, con i suoi tronchi scultorei e le sue chiome indomite ha modellato il territorio e il paesaggio, così come con l’olio che si ricava dai suoi frutti ha dato gusto alla cultura culinaria italiana.</p>
+                  <p>L&aposulivo è una pianta antica e carica di rimandi simbolici e culturali, con i suoi tronchi scultorei e le sue chiome indomite ha modellato il territorio e il paesaggio, così come con l&aposolio che si ricava dai suoi frutti ha dato gusto alla cultura culinaria italiana.</p>
                   <a className="btn-1 green" href="">Read More<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></a>
                 </div>
              </div>
@@ -183,7 +183,7 @@ const Home = () => {
         <div className="container">
           <header>
             <h2>Our Products</h2>
-            <h6>Tre linee d’eccellenza</h6>
+            <h6>Tre linee d&aposeccellenza</h6>
             <p>Il risultato di questo lavoro sono 3 oli evo dalla qualità eccelsa e dal sapore inconfondibile, ognuno con le proprie caratteristiche organolettiche.</p>
             <a className="btn-1 green" href="">Read More<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></a>
           </header>
@@ -217,7 +217,7 @@ const Home = () => {
                   <div className="col-12 col-md-7">
                      <div className="category">Cleaner</div>
                      <div className="name">Kit Limited Edition</div>
-                     <a href="#" class="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
+                     <a href="#" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
                   </div>
                 </div>
               </div>
@@ -234,7 +234,7 @@ const Home = () => {
                   <div className="col-12 col-md-7">
                      <div className="category">Cleaner</div>
                      <div className="name">Kit Limited Edition</div>
-                     <a href="#" class="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
+                     <a href="#" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
                   </div>
                 </div>
               </div>
@@ -251,7 +251,7 @@ const Home = () => {
                   <div className="col-12 col-md-7">
                      <div className="category">Cleaner</div>
                      <div className="name">Kit Limited Edition</div>
-                     <a href="#" class="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
+                     <a href="#" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
                   </div>
                 </div>
               </div>
@@ -268,7 +268,7 @@ const Home = () => {
                   <div className="col-12 col-md-7">
                      <div className="category">Cleaner</div>
                      <div className="name">Kit Limited Edition</div>
-                     <a href="#" class="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
+                     <a href="#" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
                   </div>
                 </div>
               </div>
