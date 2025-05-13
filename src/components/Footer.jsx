@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -102,11 +103,11 @@ const Footer = () => {
           <div className="col-12 col-md-4">
             <div className="title-bk">Products</div>
             <ul className='menu'>
-              <li><a href="#">Chemical</a></li>
-              <li><a href="#">Compostable Bags</a></li>
-              <li><a href="#">Heavy Duty Wipes</a></li>
-              <li><a href="#">Rolls</a></li>
-              <li><a href="#">Urinal Screen</a></li>
+              <li><Link href="/category/chemical">Chemical</Link></li>
+              <li><Link href="/category/compostable-bags">Compostable Bags</Link></li>
+              <li><Link href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
+              <li><Link href="/category/rolls">Rolls</Link></li>
+              <li><Link href="/category/urinal-screen">Urinal Screen</Link></li>
             </ul>
           </div>
 

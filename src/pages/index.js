@@ -100,8 +100,8 @@ const Home = () => {
       <section className="bk-home-banner">
         <figure><img src={bannerImage.src} alt="Banner" /></figure>
         <div className="container">
-          <h1 ref={titleRef}>Tough on Dirt. Gentle on Nature.</h1>
-          <p ref={descRef}>Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s.</p>
+          <h1 >Tough on Dirt. Gentle on Nature.</h1>
+          <p >Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s.</p>
           <a href="#" className="btn-1 white">
             View Products
             <svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg>
