@@ -7,37 +7,37 @@ import ProductImage from '../assets/images/product.png';
 
 const products = [
   {
-    id: 1,
+    id: 11,
     name: 'Kit Limited Edition',
     price: 499,
     image: '/assets/images/product.png',
   },
   {
-    id: 2,
+    id: 22,
     name: 'Kit Limited Edition',
     price: 299,
     image: '/assets/images/product.png',
   },
   {
-    id: 3,
+    id: 33,
     name: 'Kit Limited Edition',
     price: 999,
     image: '/assets/images/product.png',
   },  
   {
-    id: 4,
+    id: 44,
     name: 'Kit Limited Edition',
     price: 499,
     image: '/assets/images/product.png',
   },
   {
-    id: 5,
+    id: 55,
     name: 'Kit Limited Edition',
     price: 299,
     image: '/assets/images/product.png',
   },
  {
-    id: 6,
+    id: 66,
     name: 'Kit Limited Edition',
     price: 299,
     image: '/assets/images/product.png',
