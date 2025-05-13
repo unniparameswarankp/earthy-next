@@ -290,6 +290,9 @@ p{
 .justify-content-center{
   justify-content: center;
 }
+.align-items-center{
+  align-items: center;
+}
 @media (min-width: 768px) {
   .col-md-4 {
       flex: 0 0 33.33333333%;
@@ -1494,5 +1497,72 @@ transform: scaleX(-1);
       left: 60%;
       transform: rotate(130deg);
     }
+  }
+}
+
+
+.bk-product-detail{
+  padding-top: 200px;
+  padding-bottom: 10px;
+  img{
+    width: 100%;
+    height: auto;
+  }
+  .container{
+    width: 1000px;
+  }
+  .sub-title-bk{
+    font-family:  'Bainsley';
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  h1{
+    font-size: 5rem;
+    line-height: 1;
+    color: #3b863e;
+    margin-bottom: 2rem;
+    @media (max-width: 767px) {
+      font-size: 3rem;
+    }
+  }
+  .text-bk{
+    max-width: 400px;
+    margin-left: auto;
+    font-size: 1.1rem;
+  }
+  .price-bk{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2d5605;
+  }
+  .btn-1{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .description-bk{
+    padding-top: 50px;
+  }
+  .gallery-bk{
+    padding-top: 50px;
+  }
+   .swiper{
+      padding-bottom: 50px;
+  }
+  .swiper-button-prev, .swiper-button-next{
+      display: none;
+  }
+  .swiper-pagination-bullet{
+      height: 32px;
+      width: 32px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: .5;
+  }
+  .swiper-pagination-bullet-active{
+      opacity: 1;
+  }
+  h2{
+    font-size: 2rem;
   }
 }

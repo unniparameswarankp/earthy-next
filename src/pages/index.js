@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -217,7 +218,7 @@ const Home = () => {
                   <div className="col-12 col-md-7">
                      <div className="category">Cleaner</div>
                      <div className="name">Kit Limited Edition</div>
-                     <a href="#" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
+                     <Link href="/product-template" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></Link>
                   </div>
                 </div>
               </div>
@@ -234,7 +235,7 @@ const Home = () => {
                   <div className="col-12 col-md-7">
                      <div className="category">Cleaner</div>
                      <div className="name">Kit Limited Edition</div>
-                     <a href="#" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
+                     <Link href="/product-template" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></Link>
                   </div>
                 </div>
               </div>
@@ -251,7 +252,7 @@ const Home = () => {
                   <div className="col-12 col-md-7">
                      <div className="category">Cleaner</div>
                      <div className="name">Kit Limited Edition</div>
-                     <a href="#" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
+                     <Link href="/product-template" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></Link>
                   </div>
                 </div>
               </div>
@@ -268,7 +269,7 @@ const Home = () => {
                   <div className="col-12 col-md-7">
                      <div className="category">Cleaner</div>
                      <div className="name">Kit Limited Edition</div>
-                     <a href="#" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></a>
+                     <Link href="/product-template" className="btn-1 green" tabindex="0">View Product<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><path id="arrow" d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16581.229 9977.23)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"></path></svg></Link>
                   </div>
                 </div>
               </div>
