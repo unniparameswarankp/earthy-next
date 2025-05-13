@@ -73,8 +73,6 @@ export default function ShopPage() {
         <div className='row'>
             {products.map((product) => (
             <div key={product.id} className='col-md-6 col-12 pb-30'>
-
-
                              <div className="bk-product-listing">
                               <svg xmlns='http://www.w3.org/2000/svg' width='295.401' height='409.001' viewBox='0 0 295.401 409.001'><path id='Intersezione_1' data-name='Intersezione 1' d='M-9121,1999q-.388,0-.774-.01A30,30,0,0,1-9151,1969V1620a30,30,0,0,1,30-30h184.706c62.645,67.685,88.677,165.5,78.581,206.023-9.7,38.927-88.364,140.017-192.271,202.978Z' transform='translate(9151 -1589.999)' fill='#fffcd2'/></svg>
                                 <div className="row">
@@ -90,8 +88,6 @@ export default function ShopPage() {
                                   </div>
                                 </div>
                               </div>
-
-
             </div>
             ))}
         </div>
