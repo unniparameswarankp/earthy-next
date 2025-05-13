@@ -72,7 +72,7 @@ export default function ShopPage() {
         </ul>
         <div className='row'>
             {products.map((product) => (
-            <div className='col-md-6 col-12 pb-30'>
+            <div key={product.name} className='col-md-6 col-12 pb-30'>
 
 
                              <div className="bk-product-listing">
