@@ -509,9 +509,9 @@ height: calc(100vh - 50px);
 display: flex;
 align-items: center;
 justify-content: center;
-color: #ffffff;
+color: #000000;
   z-index: 5;
-figure{
+figure, video{
   position: absolute;
   top: 0;
   left: 0;
@@ -519,6 +519,8 @@ figure{
   width: 100%;
   margin: 0;
   z-index: -1;
+  object-fit: cover;
+  object-position: center;
       border-bottom-left-radius: 50% 50px;
       border-bottom-right-radius: 50% 50px;
       overflow: hidden;
@@ -551,6 +553,7 @@ h1{
   font-size: 4rem;
   max-width: 500px;
   width: 80%;
+  color: #3b863e;
       margin: 0;
       margin-bottom: 0px;
       line-height: 1;
@@ -1566,3 +1569,4 @@ transform: scaleX(-1);
     font-size: 2rem;
   }
 }
+
