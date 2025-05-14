@@ -104,6 +104,7 @@ const Home = () => {
           className="video-banner"
           src="/combo.mp4"
           autoPlay
+          loop
           muted
           playsInline
         ></video>
