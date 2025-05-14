@@ -503,13 +503,13 @@ nav{
 
 
 .bk-home-banner{
-position: relative;
-width: 100%;
-height: calc(100vh - 50px);
-display: flex;
-align-items: center;
-justify-content: center;
-color: #000000;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
   z-index: 5;
 figure, video{
   position: absolute;
