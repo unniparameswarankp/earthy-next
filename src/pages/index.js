@@ -102,7 +102,7 @@ const Home = () => {
         {/* <figure><img src={bannerImage.src} alt="Banner" /></figure> */}
         <video
           className="video-banner"
-          src="/combo.mp4"
+          src="/banner-video.mp4"
           autoPlay
           loop
           muted
