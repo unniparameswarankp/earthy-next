@@ -9,10 +9,10 @@ import { useRouter } from 'next/router';
 
 
 export default function CategoryPage({ category }) {
-  if (!category) return <p>Loading...</p>;
+  const router = useRouter(); 
+  const currentSlug = router.query.slug;
 
-const router = useRouter();
-const currentSlug = router.query.slug;
+  if (!category) return <p>Loading...</p>; 
 
   return (
     

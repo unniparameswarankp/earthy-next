@@ -130,12 +130,12 @@ const Home = ({ products }) => {
         <div className="container">
           <h1 >Tough on Dirt. Gentle on Nature.</h1>
           <p >Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s.</p>
-          <a href="/shop" className="btn-1 green">
+          <Link href="/shop" className="btn-1 green">
             View Shop
             <svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg>
-          </a>
+          </Link>
         </div>
-        <a className="down-icon" href="#"><img src={iconImage.src} alt="Scroll down" /></a>
+        <Link className="down-icon" href="#"><img src={iconImage.src} alt="Scroll down" /></Link>
       </section>
 
       {/* About Section */}
@@ -191,7 +191,7 @@ const Home = ({ products }) => {
                   <h2>I nostri ulivi</h2>
                   <h5>il tesoro della nostra terra</h5>
                   <p>L&aposulivo è una pianta antica e carica di rimandi simbolici e culturali, con i suoi tronchi scultorei e le sue chiome indomite ha modellato il territorio e il paesaggio, così come con l&aposolio che si ricava dai suoi frutti ha dato gusto alla cultura culinaria italiana.</p>
-                  <a className="btn-1 green" href="/about">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></a>
+                  <Link className="btn-1 green" href="/about">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
                 </div>
              </div>
           </div>

@@ -43,12 +43,12 @@ export async function getServerSideProps(context) {
 }
 
 export default function ProductDetails({ product, relatedProducts }) {
-  if (!product) return <p>Product not found</p>;
+ 
 
   const [showPopup, setShowPopup] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [mainProductQty, setMainProductQty] = useState(1);
-
+ if (!product) return <p>Product not found</p>;
 
   const openPopup = () => {
     setSelectedProducts([{ title: product.title, quantity: mainProductQty }]);
