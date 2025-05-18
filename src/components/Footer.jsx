@@ -25,9 +25,10 @@ const Footer = () => {
           <div className="col-12 col-md-4">
             <div className="title-bk">Pages</div>
             <ul className='menu'>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Blogs</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="#">About Us</Link></li>
+              <li><Link href="/blog">Blogs</Link></li>
+              <li><Link href="/contact">Contact Us</Link></li>
             </ul>
             <div className="title-bk">Follow Us</div>
             {/* Social Icons */}
