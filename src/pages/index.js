@@ -235,7 +235,7 @@ const Home = ({ products }) => {
             {/* Slides */}
             
             {products.map((product, index) => (
-  <SwiperSlide key={product._id || index}>
+  <SwiperSlide key={index}>
               <div  className="bk-product-listing">
 <svg
   xmlns="http://www.w3.org/2000/svg"
