@@ -261,10 +261,9 @@ const Home = ({ products }) => {
                   <div className="col-12 col-md-7">
                      
                      <div className="name">{product.title}</div>
-                     <div className="category">{new Intl.NumberFormat('en-NZ', {
-                        style: 'currency',
-                        currency: 'NZD'
-                      }).format(product.price)}</div>
+                     <div className="category">
+                      
+                      ${product.price}</div>
 <Link href={`/product/${product.slug.current}`} className="btn-1 green" tabIndex={0}>
   View Product
   <svg
