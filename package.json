@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^3.2.1",
     "@sanity/client": "^7.2.1",
     "@sanity/image-url": "^1.1.0",
     "framer-motion": "^12.10.4",
     "gsap": "^3.13.0",
     "next": "15.3.2",
-    "next-sanity": "^9.11.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next-sanity": "^0.8.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "swiper": "^11.2.6"
   },
   "devDependencies": {

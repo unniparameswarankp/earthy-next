@@ -281,7 +281,7 @@ const Home = ({ products }) => {
       strokeWidth="2"
     />
   </svg>
-</Link>
+</Link>   
                   </div>
                 </div>
               </div>
