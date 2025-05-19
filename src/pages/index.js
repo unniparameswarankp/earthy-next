@@ -18,20 +18,51 @@ import { client } from '@/lib/sanity' // or '../lib/sanity' if not using aliases
 import { urlFor } from '@/lib/image'
 
 
+// export async function getServerSideProps() {
+//   const query = `*[_type == "product"][0...6]{
+//     _id,
+//     title,
+//     slug, // ✅ include slug for linking
+//     price,
+//     "categories": categories[]->name,
+//     image
+//   }`
+
+//   const products = await client.fetch(query)
+
+//   return {
+//     props: { products }
+//   }
+// }
+
+
 export async function getServerSideProps() {
-  const query = `*[_type == "product"][0...6]{
-    _id,
-    title,
-    slug, // ✅ include slug for linking
-    price,
-    "categories": categories[]->name,
-    image
-  }`
+  try {
+    const query = `*[_type == "product"][0...6]{
+      _id,
+      title,
+      slug,
+      price,
+      "categories": categories[]->name,
+      image
+    }`
 
-  const products = await client.fetch(query)
+    const products = await client.fetch(query)
 
-  return {
-    props: { products }
+    if (!products) {
+      return { notFound: true } // return 404 if no data
+    }
+
+    return {
+      props: { products }
+    }
+  } catch (error) {
+    console.error('Error fetching products:', error)
+    return {
+      props: {
+        products: []
+      }
+    }
   }
 }
 
