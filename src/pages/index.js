@@ -15,8 +15,6 @@ import cleaningProductImage from '../assets/images/cleaning-products.png';
 import ProductImage from '../assets/images/product.png';
 import KiwyImage from '../assets/images/kiwy.png'; 
 import { client } from '@/lib/sanity' // or '../lib/sanity' if not using aliases
-import { client } from '../lib/sanityClient'  // or your actual path
-
 import { urlFor } from '@/lib/image' 
 
 
