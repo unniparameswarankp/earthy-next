@@ -52,7 +52,38 @@ import { urlFor } from '@/lib/image'
 // }
 
 
-  
+ export async function getServerSideProps() {
+  // Fetch all products and their categories
+  const productsQuery = `*[_type == "product"]{
+  _id,
+  title,
+  slug, // ✅ Add this line
+  price,
+  "categories": categories[]->{
+    _id,
+    title,
+    slug
+  },
+  image
+}`;
+
+
+  const categoriesQuery = `*[_type == "category"]{
+    _id,
+    title,
+    slug
+  }`;
+
+  const products = await client.fetch(productsQuery);
+  const categories = await client.fetch(categoriesQuery);
+
+  return {
+    props: {
+      products,
+      categories,
+    },
+  };
+} 
 
 
 
