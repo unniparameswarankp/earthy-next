@@ -11,3 +11,10 @@ export default defineConfig([
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
 ]);
+
+module.exports = {
+  extends: ['next', 'next/core-web-vitals', 'airbnb', 'airbnb/hooks'],
+  rules: {
+    // Add custom rules if needed
+  },
+};
