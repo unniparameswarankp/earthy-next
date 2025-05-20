@@ -21,35 +21,35 @@ import { urlFor } from '@/lib/image'
 
 
 
-export async function getServerSideProps() {
-  try {
-    const query = `*[_type == "product"][0...6]{
-      _id,
-      title,
-      slug,
-      price,
-      "categories": categories[]->name,
-      image
-    }`
+// export async function getServerSideProps() {
+//   try {
+//     const query = `*[_type == "product"][0...6]{
+//       _id,
+//       title,
+//       slug,
+//       price,
+//       "categories": categories[]->name,
+//       image
+//     }`
 
-    const products = await client.fetch(query)
+//     const products = await client.fetch(query)
 
-    if (!products) {
-      return { notFound: true } // return 404 if no data
-    }
+//     if (!products) {
+//       return { notFound: true } // return 404 if no data
+//     }
 
-    return {
-      props: { products }
-    }
-  } catch (error) {
-    console.error('Error fetching products:', error)
-    return {
-      props: {
-        products: []
-      }
-    }
-  }
-}
+//     return {
+//       props: { products }
+//     }
+//   } catch (error) {
+//     console.error('Error fetching products:', error)
+//     return {
+//       props: {
+//         products: []
+//       }
+//     }
+//   }
+// }
 
 
   
