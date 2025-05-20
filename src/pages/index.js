@@ -225,6 +225,90 @@ const Home = ({ products }) => {
         <img className="icon-leaf-float icon-leaf-5" src={iconImage.src} alt="Leaf Icon" />
       </section>
 
+            <section className="bk-home-our-products">
+        <div className="container">
+          <header>
+            <h2>Our Products</h2>
+            <h6>Tre linee d&aposeccellenza</h6>
+            <p>Il risultato di questo lavoro sono 3 oli evo dalla qualità eccelsa e dal sapore inconfondibile, ognuno con le proprie caratteristiche organolettiche.</p>
+            <Link className="btn-1 green" href="/shop">View Shop<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
+          </header>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+
+            // Responsive breakpoints
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              769: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              }
+            }}
+          >
+            {/* Slides */}
+            
+            {products.map((product, index) => (
+ <SwiperSlide key={product._id}>
+
+              <div  className="bk-product-listing">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="295.401"
+  height="409.001"
+  viewBox="0 0 295.401 409.001"
+>
+  <path
+    d="M-9121,1999q-.388,0-.774-.01A30,30,0,0,1-9151,1969V1620a30,30,0,0,1,30-30h184.706c62.645,67.685,88.677,165.5,78.581,206.023-9.7,38.927-88.364,140.017-192.271,202.978Z"
+    transform="translate(9151 -1589.999)"
+    fill="#fffcd2"
+  />
+</svg>
+                <div className="row">
+                  <div className="col-12 col-md-5">
+                     <figure>
+                        {product.image && (
+              <img src={urlFor(product.image).width(300).url()} alt={product.title} />
+            )}
+                     </figure>
+                  </div>
+                  <div className="col-12 col-md-7">
+                     
+                     <div className="name">{product.title}</div>
+                     <div className="category">
+                      
+                      ${product.price}</div>
+<Link href={`/product/${product.slug.current}`} className="btn-1 green" tabIndex={0}>
+  View Product
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="12.215"
+    height="19.025"
+    viewBox="0 0 12.215 19.025"
+  >
+    <path
+      d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9"
+      transform="translate(16581.229 9977.23)"
+      fill="none"
+      stroke="#fff"
+      strokeLinecap="round"
+      strokeWidth="2"
+    />
+  </svg>
+</Link>   
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
 
     </>
   );
