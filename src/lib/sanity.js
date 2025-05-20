@@ -2,11 +2,10 @@ import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: '9ixmdwm9',
+  dataset: 'production',
   apiVersion: '2023-01-01',
   useCdn: true,
-  token: process.env.SANITY_API_TOKEN, // Optional, only if you need secure reads
 });
 
 const builder = imageUrlBuilder(client);
@@ -14,7 +13,6 @@ const builder = imageUrlBuilder(client);
 export function urlFor(source) {
   return builder.image(source);
 }
-
 
 // Get all category slugs
 export async function getAllCategorySlugs() {
