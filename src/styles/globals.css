@@ -1236,9 +1236,6 @@ transform: scaleX(-1);
       .logo-bk {
         width: 140px;
       }
-      .shop-link{
-        display: none;
-      }
     }
     .bk-header.add-bg{
         min-height: 100px;
