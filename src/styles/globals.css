@@ -351,9 +351,13 @@ overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 20px;
+  transition: .4s;
   svg{
       width: 12px;
       height: 19px;
+      path{
+        transition: .4s;
+      }
   }
 }
 .btn-1.white{
@@ -375,6 +379,15 @@ overflow: hidden;
       path{
           stroke: #3b863e;
       }
+  }
+  &:hover{
+    background-color: #2d5605;
+    color: #ffffff;
+    svg{
+      path{
+        stroke: #ffffff;
+      }
+    }
   }
 }
 .btn-1.small{
@@ -464,12 +477,17 @@ a{
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
-  padding: .625rem 1.875rem;
+     padding: .625rem 1.875rem;
       font-size: 1rem;
       border: 1px solid #93d50a;
       background-color: #93d50a;
       color: #000;
       transition: .4s;
+      &:hover{
+        border: 1px solid #93d50a;
+        background-color: transparent;
+        color: #93d50a;
+      }
 }
 nav{
   ul{
@@ -1003,6 +1021,17 @@ p{
   }
   a{
       color: #ffffff;
+      transition: .4s;
+      /* svg{
+        transition: .4s;
+      } */
+      &:hover{
+        opacity: .5;
+        /* color: #000000;
+        svg{
+          filter: brightness(0);
+        } */
+      }
   }
   .title-bk{
       font-size: .9rem;
@@ -1273,6 +1302,7 @@ transform: scaleX(-1);
     height: 45%;
     width: 45%;
     position: absolute;
+    transition: .4s;
   }
   img:nth-child(1){
     transform: translate(-50%, -50%)rotate(90deg);
@@ -1291,8 +1321,31 @@ transform: scaleX(-1);
   }
   img:nth-child(4){
     transform: translate(-50%, -50%)rotate(90deg);
+    bottom: -25%;
+    right: -25%;
+  }
+  &:hover{
+    cursor: pointer;
+ img:nth-child(1){
+    transform: translate(-50%, -50%)rotate(90deg);
+    top: 25%;
+    left: 25%;
+  }
+  img:nth-child(2){
+    transform: translate(-50%, -50%)rotate(-190deg);
+    top: 25%;
+    left: 75%;
+  }
+  img:nth-child(3){
+    transform: translate(-50%, -50%)rotate(180deg);
+    bottom: -25%;
+    left: 25%;
+  }
+  img:nth-child(4){
+    transform: translate(-50%, -50%)rotate(90deg);
     bottom: -20%;
     right: -20%;
+  }
   }
 }
 
@@ -1378,6 +1431,12 @@ transform: scaleX(-1);
           height: 2.5rem;
           width: 2.5rem;
           filter: brightness(0)invert(1);
+      }
+    }
+    a{
+      transition: .4s;
+      &:hover{
+        opacity: .5;
       }
     }
 }
