@@ -130,7 +130,7 @@ const Home = ({ products }) => {
     <>
       <style>{`
         .swiper-pagination-bullet {
-          background: url('/icon.png');
+          background: url(/icon.png');
         }
       `}</style>
 
@@ -147,7 +147,7 @@ const Home = ({ products }) => {
         ></video>
         <div className="container">
           <h1 >Tough on Dirt. Gentle on Nature.</h1>
-          <p >Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s.</p>
+          <p >Our products clean deeply without harming the planet. With eco-friendly ingredients and powerful performance, we make it easy to care for your home and the environment at the same time.</p>
           <Link href="/shop" className="btn-1 green">
             View Shop
             <svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg>
@@ -176,8 +176,8 @@ const Home = ({ products }) => {
                 </div> ̰
                 <div className="wrap">
                   <div ref={textRef}>
-                    <h6>Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s Lorem Ipsum has been the industry&aposs standard dummy text since the 1500s.</h6>
-                    <div className="desc3">It was popularised in the 1960s with the release of Letraset sheets It was popularised in the 1960s with the release of Letraset sheets It was popularised in the 1960s with the release of Letraset sheets</div>
+                    <h6>For over 70 years, NZ Cleaning Supplies has been more than just a supplier—we've been a partner in cleanliness, innovation, and sustainability. </h6>
+                    <div className="desc3">From government buildings to five-star hotels, we've powered spotless spaces with cutting-edge equipment and eco-friendly solutions. Our journey began with a simple goal: to redefine cleaning standards across New Zealand. Today, with 2000+ products, global partnerships, and a nationwide presence, we continue to push boundaries—one cleaning solution at a time. </div>
                   </div>
                   <img className="icon-leaf-2" src={iconImage.src} alt="Leaf Icon" />
                 </div>
@@ -206,9 +206,9 @@ const Home = ({ products }) => {
              <div ref={textRef2} className="text-bk">
                 <svg className="bubble-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">                         <path id="bubble-01" d="M727.546,58.656c310.955,0,449.911,393.087,420.51,513.555s-406.925,561.318-765.145,461.58S-18.559,637.168-.059,417.165,416.591,58.656,727.546,58.656Z" transform="translate(3.614 -58.656)" fill="#fff"></path>                     </svg>
                 <div className="wrap">
-                  <h2>I nostri ulivi</h2>
-                  <h5>il tesoro della nostra terra</h5>
-                  <p>L&aposulivo è una pianta antica e carica di rimandi simbolici e culturali, con i suoi tronchi scultorei e le sue chiome indomite ha modellato il territorio e il paesaggio, così come con l&aposolio che si ricava dai suoi frutti ha dato gusto alla cultura culinaria italiana.</p>
+                  <h2>Eco-power in every drop.</h2>
+                  <h5> At NZ Cleaning Supplies, we don't just aim to meet expectations—we aim to exceed them. </h5>
+                  {/* <p>Every product we create or distribute reflects our commitment to a cleaner planet. From biodegradable chemicals to energy-efficient equipment, we lead the charge in eco-friendly innovation. We understand that no two businesses are the same. That's why we offer tailored products and services that fit seamlessly into your operations, boosting efficiency and results. </p> */}
                   <Link className="btn-1 green" href="/about">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
                 </div>
              </div>
@@ -229,8 +229,8 @@ const Home = ({ products }) => {
         <div className="container">
           <header>
             <h2>Our Products</h2>
-            <h6>Tre linee d&aposeccellenza</h6>
-            <p>Il risultato di questo lavoro sono 3 oli evo dalla qualità eccelsa e dal sapore inconfondibile, ognuno con le proprie caratteristiche organolettiche.</p>
+            <h6>Clean smarter. Live greener.</h6>
+            <p> At NZ Cleaning Supplies, we don't just aim to meet expectations—we aim to exceed them. </p>
             <Link className="btn-1 green" href="/shop">View Shop<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
           </header>
           <Swiper
