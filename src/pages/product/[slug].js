@@ -173,7 +173,7 @@ const handleSubmit = async (e) => {
           <form onSubmit={handleSubmit}>
           <h2>Enquire Now</h2>
         <label>Products</label>
-        <input type="text" name="products" readOnly value={form.products} onChange={handleChange} style={{ width: '100%', marginBottom: '1rem' }}  />
+        <textarea type="text" name="products" readOnly value={form.products} onChange={handleChange} style={{ width: '100%', marginBottom: '1rem' }}  ></textarea>
         <label>Name</label>
         <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your Name" style={{ width: '100%', marginBottom: '1rem' }} />
 

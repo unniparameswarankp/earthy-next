@@ -1520,7 +1520,8 @@ transform: scaleX(-1);
       color: #2d5605;
       border-radius: 1.5rem;
       letter-spacing: .02em;
-      &.active{
+      transition: .4s;
+      &.active, &:hover{
         background-color: #2d5605;
         color: #ffffff;
       }
