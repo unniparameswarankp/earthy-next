@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'; 
 import ProductImageDummy from '../../assets/images/product.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createClient } from 'next-sanity';
 
 // 🔁 Setup Sanity client for querying related products
@@ -62,6 +62,8 @@ export default function ProductDetails({ product, relatedProducts }) {
     });
   };
 
+
+
   const removeProduct = (prod) => {
     setSelectedProducts((prev) =>
       prev.filter(p => p.title !== prod.title)
@@ -88,6 +90,52 @@ export default function ProductDetails({ product, relatedProducts }) {
 
   const getProductQuantity = (title) =>
     selectedProducts.find(p => p.title === title)?.quantity || 0;
+
+
+useEffect(() => {
+  const productsString = selectedProducts
+    .map(p => `${p.title} (x${p.quantity})`)
+    .join(', ');
+
+  setForm(prev => ({ ...prev, products: productsString }));
+}, [selectedProducts]);
+
+
+const [form, setForm] = useState({ products: '', name: '', phone: '', email: '', message: '' });
+
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus('Sending...');
+
+  try {
+    const res = await fetch('/api/productEnquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      setStatus('Message sent successfully!');
+      setForm({ products: '', name: '', phone: '', email: '', message: '' });
+    } else {
+      console.error('Server error:', data);
+      setStatus(`Error: ${data.message || 'Something went wrong.'}`);
+    }
+  } catch (err) {
+    console.error('Fetch error:', err);
+    setStatus('Error sending message.');
+  }
+};
+
 
 
   return (
@@ -122,23 +170,21 @@ export default function ProductDetails({ product, relatedProducts }) {
         <div className='row'>
 
         <div className='col-md-6 col-12'>
-          <form>
+          <form onSubmit={handleSubmit}>
           <h2>Enquire Now</h2>
         <label>Products</label>
-        <input type="text"
-                value={selectedProducts.map(p => `${p.title} (x${p.quantity})`).join(', ')}
-                readOnly style={{ width: '100%', marginBottom: '1rem' }} />
+        <input type="text" name="products" readOnly value={form.products} onChange={handleChange} style={{ width: '100%', marginBottom: '1rem' }}  />
         <label>Name</label>
-        <input type="text" placeholder="Your Name" style={{ width: '100%', marginBottom: '1rem' }} />
+        <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your Name" style={{ width: '100%', marginBottom: '1rem' }} />
 
         <label>Phone</label>
-        <input type="tel" placeholder="Your Phone" style={{ width: '100%', marginBottom: '1rem' }} />
+        <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="Your Phone" style={{ width: '100%', marginBottom: '1rem' }} />
 
         <label>Email</label>
-        <input type="tel" placeholder="Your Email" style={{ width: '100%', marginBottom: '1rem' }} />
+        <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Your Email" style={{ width: '100%', marginBottom: '1rem' }} />
 
         <label>Message</label>
-        <textarea placeholder="Message" style={{ width: '100%', marginBottom: '1rem' }}></textarea>
+        <textarea placeholder="Message" name="message" value={form.message} onChange={handleChange} style={{ width: '100%', marginBottom: '1rem' }}></textarea>
 
         <button
           type="submit"
@@ -146,6 +192,7 @@ export default function ProductDetails({ product, relatedProducts }) {
         >
           Submit
         </button>
+        {status && <p>{status}</p>}
         </form>
         </div>
 

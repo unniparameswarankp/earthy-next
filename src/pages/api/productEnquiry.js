@@ -4,6 +4,7 @@ import sanitizeHtml from 'sanitize-html';
 
 // Define Zod schema for validation
 const contactSchema = z.object({
+  products: z.string().min(1, "Products is required").max(1000),
   name: z.string().min(1, "Name is required").max(100),
   phone: z.string().min(7, "Phone is required").max(20),
   email: z.string().email("Invalid email address"),
@@ -26,7 +27,8 @@ export default async function handler(req, res) {
     });
 
     const doc = {
-      _type: 'contactForm',
+      _type: 'productEnquiry',
+      products: validatedData.products,
       name: validatedData.name,
       phone: validatedData.phone,
       email: validatedData.email,
