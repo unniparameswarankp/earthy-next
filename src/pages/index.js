@@ -162,12 +162,12 @@ const Home = ({ products }) => {
           <h2>About <span>Earthy</span> <small>Environmental Solutions</small></h2>
           <img ref={sideimgRef} className='kiwy-img' src={KiwyImage.src} alt="" />
           <div className="row position-relative">
-            <div className="col-md-4">
+            <div className="col-md-4 col-12">
               <figure className="about-image">
                 <img ref={imageRef} src={cleaningImage.src} alt="Cleaning" />
               </figure>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-8 col-12">
               <div className="text-bk">
                 <div className="bubble-desktop">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">
