@@ -3,7 +3,8 @@ import { useState } from 'react';
 import iconImage from '../assets/images/icon.png'; 
 
 export default function Contact() {
-    const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
+
+  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
 
   const [status, setStatus] = useState('');
 
@@ -25,7 +26,7 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus('Message sent successfully!');
-        setForm({ name: '', email: '', message: '' });
+        setForm({ name: '', phone: '', email: '', message: '' });
       } else {
         setStatus('Something went wrong.');
       }
