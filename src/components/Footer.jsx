@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="title-bk">Pages</div>
             <ul className='menu'>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="#">About Us</Link></li>
+              <li><Link href="/about">About Us</Link></li>
               <li><Link href="/blog">Blogs</Link></li>
               <li><Link href="/contact">Contact Us</Link></li>
             </ul>

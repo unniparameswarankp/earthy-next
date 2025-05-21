@@ -5,7 +5,7 @@ import Link from 'next/link';
 import iconImage from '../assets/images/icon.png';
 import ProductImage from '../assets/images/product.png';
 import { client } from '@/lib/sanity'; // adjust path if needed
-import { urlFor } from '@/lib/image';
+import { urlFor } from '@/lib/image'; 
 
 export async function getServerSideProps() {
   // Fetch all products and their categories

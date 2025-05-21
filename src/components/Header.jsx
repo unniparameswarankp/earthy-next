@@ -49,7 +49,7 @@ const Header = () => {
             <div className='container'>
              <ul className='menu-bk'>
               <li><Link href="/">Home</Link></li>
-              <li><a href="#">About Us</a></li>
+              <li><Link href="/about">About Us</Link></li>
               <li><Link href="/shop">Shop</Link></li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/contact">Contact</Link></li>
@@ -72,9 +72,9 @@ const Header = () => {
           <img src={iconImage.src} alt="" />
         </button>
       </div>
-      <a className="logo-bk" href="/">
+      <Link className="logo-bk" href="/">
        <img src={logoImage.src} alt="Banner" />
-      </a>
+      </Link>
       <div className="right-bk">
         {/* <a className="profile-link" href="#">
           <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" >
