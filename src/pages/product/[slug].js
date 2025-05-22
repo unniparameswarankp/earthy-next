@@ -279,7 +279,7 @@ const handleSubmit = async (e) => {
 
         <div className='description-bk'>
           <h2>Product Details</h2>
-          {product.description}
+          <PortableText value={product.description} />
         </div>
 {product.gallery && product.gallery.length > 0 && (
         <div className='gallery-bk'>
