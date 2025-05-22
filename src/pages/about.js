@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import iconImage from '../assets/images/icon.png';
 import cleanerImage from '../assets/images/cleaner.jpg';
+import cleaningImage from '../assets/images/cleaning.jpg'; 
 
 
 
@@ -108,7 +109,7 @@ const imageRef4 = useRef(null);
           <div className="row align-items-center">
             <div className="col-md-7 col-12">
               <figure ref={imageRef2}>
-              <img src={cleanerImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
+              <img src={cleaningImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
               </figure>
             </div>
             <div className="col-md-5 col-12">
