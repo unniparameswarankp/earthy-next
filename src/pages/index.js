@@ -25,7 +25,7 @@ import { urlFor } from '@/lib/image'
 
 export async function getStaticProps() {
   // Fetch all products and their categories
-  const productsQuery = `*[_type == "product"]{
+  const productsQuery = `*[_type == "product"][0...4]{
   _id,
   title,
   slug, // ✅ Add this line
