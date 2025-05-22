@@ -1,6 +1,7 @@
 import { client } from '@/lib/sanity';
 import { z } from 'zod';
 import sanitizeHtml from 'sanitize-html';
+import nodemailer from 'nodemailer';
 
 // Define Zod schema for validation
 const contactSchema = z.object({
@@ -37,6 +38,33 @@ export default async function handler(req, res) {
     };
 
     await client.create(doc);
+
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASS,
+        },
+      });
+
+      const mailOptions = {
+        from: `"${validatedData.name}" <${validatedData.email}>`,
+        to: process.env.GMAIL_USER,  // where you want to receive the email
+        subject: `New product enquiry form submission from ${validatedData.name}`,
+        text: `
+      Name: ${validatedData.name}
+      Phone: ${validatedData.phone}
+      Email: ${validatedData.email}
+      Products: ${validatedData.products}
+
+      Message:
+      ${validatedData.message}
+        `,
+      };
+
+      await transporter.sendMail(mailOptions);
+
 
     return res.status(200).json({ message: 'Form submission successful' });
   } catch (error) {
