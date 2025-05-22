@@ -262,7 +262,7 @@ const handleSubmit = async (e) => {
           </div>
           <div className="col-md-6 col-12">
             <div className='text-bk'>
-              <div className='sub-title-bk'>Scopri la nuova annata!</div>
+              <div className='sub-title-bk'>Product</div>
               <h1>{product.title}</h1>
               <p className="price-bk">{new Intl.NumberFormat('en-NZ', {
                                                              style: 'currency',
