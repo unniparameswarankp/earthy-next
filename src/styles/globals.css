@@ -2017,3 +2017,30 @@ transform: scaleX(-1);
     margin-right: auto;
   }
 }
+
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 14px;
+    border: 1px solid #3b863e;
+    border-radius: 6px;
+    color: #3b863e;
+    text-decoration: none;
+    transition: background 0.3s;
+
+    &.active {
+      background: #3b863e;
+      color: white;
+      border-color: #3b863e;
+    }
+
+    &:hover {
+      background: #3b863e;
+      color: #ffffff;
+    }
+  }
+}
