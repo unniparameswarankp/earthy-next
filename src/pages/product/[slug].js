@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 import ProductImageDummy from '../../assets/images/product.png';
 import { useState, useEffect } from 'react';
 import { createClient } from 'next-sanity';
+import { PortableText } from '@portabletext/react'
 
 // 🔁 Setup Sanity client for querying related products
 const client = createClient({
