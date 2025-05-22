@@ -32,7 +32,12 @@ export async function getServerSideProps(context) {
       title,
       slug,
       price,
-      image
+      image,
+      pdfFile{
+        asset->{
+          url
+        }
+      }
     }`,
     { category: product.category, slug }
   );
