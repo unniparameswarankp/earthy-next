@@ -1647,6 +1647,10 @@ transform: scaleX(-1);
       background-position: center;
       background-repeat: no-repeat;
       opacity: .5;
+      border-radius: 0;
+      border-top-left-radius: 90%;
+      border-bottom-right-radius: 90%;
+      background-color: #3b863e;
   }
   .swiper-pagination-bullet-active{
       opacity: 1;

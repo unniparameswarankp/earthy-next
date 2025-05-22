@@ -128,11 +128,6 @@ const Home = ({ products }) => {
 
   return (
     <>
-      <style>{`
-        .swiper-pagination-bullet {
-          background: url(/icon.png');
-        }
-      `}</style>
 
       {/* Banner Section */}
       <section className="bk-home-banner">
