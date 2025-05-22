@@ -282,6 +282,16 @@ const handleSubmit = async (e) => {
           <h2>Product Details</h2>
           <PortableText value={product.description} />
         </div>
+{product.pdfFile?.asset?.url && (
+  <a
+    href={product.pdfFile.asset.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-600 underline"
+  >
+    📄 Download Product PDF
+  </a>
+)}
 {product.gallery && product.gallery.length > 0 && (
         <div className='gallery-bk'>
           <h2 className='text-center'>Gallery</h2>
