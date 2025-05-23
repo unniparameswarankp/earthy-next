@@ -60,6 +60,11 @@ export async function getProductBySlug(slug) {
       category->{
         title,
         slug
+      },
+    pdfFile{
+        asset->{
+          url
+        }
       }
     }`,
     { slug }

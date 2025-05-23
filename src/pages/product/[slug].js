@@ -243,7 +243,7 @@ export default function ProductDetails({ product, relatedProducts }) {
     href={product.pdfFile.asset.url}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-blue-600 underline"
+    className="btn-1 green small"
   >
     📄 Download Product PDF
   </a>
