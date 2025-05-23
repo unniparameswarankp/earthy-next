@@ -1728,6 +1728,9 @@ transform: scaleX(-1);
     right: 50px;
     font-size: 1.5rem!important;
     color: #3b863e;
+    z-index: 1000;
+    border: none;
+    background-color: transparent;
   }
   ul{
     margin: 0;

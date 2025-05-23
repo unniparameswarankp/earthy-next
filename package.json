@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "@portabletext/react": "^3.2.1",
     "@sanity/client": "^7.2.1",
     "@sanity/image-url": "^1.1.0",
@@ -19,9 +20,10 @@
     "nodemailer": "^7.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.56.4",
     "sanitize-html": "^2.17.0",
     "swiper": "^11.2.6",
-    "zod": "^3.25.17"
+    "zod": "^3.25.23"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

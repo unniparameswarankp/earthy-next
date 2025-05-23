@@ -1,5 +1,3 @@
-
-
 import { getProductBySlug } from '../../lib/sanity';
 import { urlFor } from '../../lib/sanity';
 import Image from 'next/image';
@@ -12,9 +10,11 @@ import 'swiper/css/pagination';
 import ProductImageDummy from '../../assets/images/product.png';
 import { useState, useEffect } from 'react';
 import { createClient } from 'next-sanity';
-import { PortableText } from '@portabletext/react'
+import { PortableText } from '@portabletext/react';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 
-// 🔁 Setup Sanity client for querying related products
 const client = createClient({
   projectId: '9ixmdwm9',
   dataset: 'production',
@@ -25,8 +25,6 @@ const client = createClient({
 export async function getServerSideProps(context) {
   const { slug } = context.params;
   const product = await getProductBySlug(slug);
-
-  // ✅ Fetch related products by category
   const relatedProducts = await client.fetch(
     `*[_type == "product" && category == $category && slug.current != $slug][0...3]{
       _id,
@@ -48,27 +46,43 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function ProductDetails({ product, relatedProducts }) {
- 
+const schema = z.object({
+  products: z.string(),
+  name: z.string().min(1, "Name is required"),
+  phone: z.string().min(10, "Phone is required"),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters' }),
+});
 
+export default function ProductDetails({ product, relatedProducts }) {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [mainProductQty, setMainProductQty] = useState(1);
- if (!product) return <p>Product not found</p>;
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(schema),
+    mode: 'onChange',
+    reValidateMode: 'onBlur'
+  });
+
+  const [status, setStatus] = useState('');
 
   const openPopup = () => {
     setSelectedProducts([{ title: product.title, quantity: mainProductQty }]);
-  setShowPopup(true);
+    setShowPopup(true);
   };
 
- const addProduct = (prod) => {
+  const addProduct = (prod) => {
     setSelectedProducts((prev) => {
       if (prev.find(p => p.title === prod.title)) return prev;
       return [...prev, { title: prod.title, quantity: 1 }];
     });
   };
-
-
 
   const removeProduct = (prod) => {
     setSelectedProducts((prev) =>
@@ -97,157 +111,99 @@ export default function ProductDetails({ product, relatedProducts }) {
   const getProductQuantity = (title) =>
     selectedProducts.find(p => p.title === title)?.quantity || 0;
 
+  useEffect(() => {
+    const productsString = selectedProducts
+      .map(p => `${p.title} (x${p.quantity})`)
+      .join(', ');
+    setValue("products", productsString);
+  }, [selectedProducts]);
 
-useEffect(() => {
-  const productsString = selectedProducts
-    .map(p => `${p.title} (x${p.quantity})`)
-    .join(', ');
+  const onSubmit = async (data) => {
+    setStatus('Sending...');
+    try {
+      const res = await fetch('/api/productEnquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
 
-  setForm(prev => ({ ...prev, products: productsString }));
-}, [selectedProducts]);
+      const result = await res.json();
 
-
-const [form, setForm] = useState({ products: '', name: '', phone: '', email: '', message: '' });
-
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setStatus('Sending...');
-
-  try {
-    const res = await fetch('/api/productEnquiry', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    });
-
-    const data = await res.json();
-
-    if (res.ok) {
-      setStatus('Message sent successfully!');
-      setForm({ products: '', name: '', phone: '', email: '', message: '' });
-    } else {
-      console.error('Server error:', data);
-      setStatus(`Error: ${data.message || 'Something went wrong.'}`);
+      if (res.ok) {
+        setStatus('Message sent successfully!');
+      } else {
+        console.error('Server error:', result);
+        setStatus(`Error: ${result.message || 'Something went wrong.'}`);
+      }
+    } catch (err) {
+      console.error('Fetch error:', err);
+      setStatus('Error sending message.');
     }
-  } catch (err) {
-    console.error('Fetch error:', err);
-    setStatus('Error sending message.');
-  }
-};
-
-
+  };
 
   return (
     <div className='bk-product-detail'>
-      <style>{`
-        .swiper-pagination-bullet {
-          background: url('/icon.png');
-        }
-      `}</style>
-
-            {showPopup && (
-  <div className='bk-product-popup'>
-    <div className='inner-bk'>
-      <button
-        onClick={() => setShowPopup(false)}
-        style={{
-          position: 'absolute',
-          top: '10px',
-          right: '10px',
-          background: 'transparent',
-          border: 'none',
-          fontSize: '18px',
-          cursor: 'pointer'
-        }}
-        className='close'
-      >
-        ×
-      </button>
-
-      
-      
-        <div className='row'>
-
-        <div className='col-md-6 col-12'>
-          <form onSubmit={handleSubmit}>
-          <h2>Enquire Now</h2>
-        <label>Products</label>
-        <textarea type="text" name="products" readOnly value={form.products} onChange={handleChange} style={{ width: '100%', marginBottom: '1rem' }}  ></textarea>
-        <label>Name</label>
-        <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your Name" style={{ width: '100%', marginBottom: '1rem' }} />
-
-        <label>Phone</label>
-        <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="Your Phone" style={{ width: '100%', marginBottom: '1rem' }} />
-
-        <label>Email</label>
-        <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Your Email" style={{ width: '100%', marginBottom: '1rem' }} />
-
-        <label>Message</label>
-        <textarea placeholder="Message" name="message" value={form.message} onChange={handleChange} style={{ width: '100%', marginBottom: '1rem' }}></textarea>
-
-        <button
-          type="submit"
-          className='btn-1 green'
-        >
-          Submit
-        </button>
-        {status && <p>{status}</p>}
-        </form>
+      {showPopup && (
+        <div className='bk-product-popup'>
+          <div className='inner-bk'>
+            <button onClick={() => setShowPopup(false)} className='close'>×</button>
+            <div className='row'>
+              <div className='col-md-6 col-12'>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <h2>Enquire Now</h2>
+                  <label>Products</label>
+                  <textarea {...register("products")} readOnly style={{ width: '100%', marginBottom: '1rem' }}></textarea>
+                  <label>Name</label>
+                  <input {...register("name")} placeholder="Your Name" style={{ width: '100%', marginBottom: '1rem' }} />
+                  {errors.name && <p>{errors.name.message}</p>}
+                  <label>Phone</label>
+                  <input {...register("phone")} placeholder="Your Phone" style={{ width: '100%', marginBottom: '1rem' }} />
+                  {errors.phone && <p>{errors.phone.message}</p>}
+                  <label>Email</label>
+                  <input {...register("email")} placeholder="Your Email" style={{ width: '100%', marginBottom: '1rem' }} />
+                  {errors.email && <p>{errors.email.message}</p>}
+                  <label>Message</label>
+                  <textarea {...register("message")} placeholder="Message" style={{ width: '100%', marginBottom: '1rem' }}></textarea>
+                  {errors.message && <p>{errors.message.message}</p>}
+                  <button type="submit" className='btn-1 green' disabled={isSubmitting}>Submit</button>
+                  {status && <p>{status}</p>}
+                </form>
+              </div>
+              <div className='col-md-6 col-12'>
+                <h2>Add more products</h2>
+                {relatedProducts?.length > 0 && (
+                  <ul>
+                    {relatedProducts.map((prod) => {
+                      const isSelected = selectedProducts.some(p => p.title === prod.title);
+                      const qty = getProductQuantity(prod.title);
+                      return (
+                        <li key={prod._id}>
+                          <img src={urlFor(prod.image).width(400).url()} alt={prod.title} />
+                          <h5>{prod.title}</h5>
+                          <p>{new Intl.NumberFormat('en-NZ', {
+                            style: 'currency',
+                            currency: 'NZD'
+                          }).format(prod.price)}</p>
+                          {isSelected ? (
+                            <div className="qty-controls btn-1 green small">
+                              <button onClick={() => decreaseQty(prod.title)}>-</button>
+                              <span>{qty}</span>
+                              <button onClick={() => increaseQty(prod.title)}>+</button>
+                              <button onClick={() => removeProduct(prod)}>Remove</button>
+                            </div>
+                          ) : (
+                            <button className='btn-1 green small' onClick={() => addProduct(prod)}>Add</button>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
-
-
-        <div className='col-md-6 col-12'>
-          <h2>Add more products</h2>
-            {relatedProducts?.length > 0 && (
-           <ul>
-              {relatedProducts.map((prod) =>{ 
-                const isSelected = selectedProducts.some(p => p.title === prod.title);
-                const qty = getProductQuantity(prod.title);
-                return(
-                
-            <li key={prod._id}>
-              
-                         <img
-                          src={urlFor(prod.image).width(400).url()}
-                          alt={prod.title}
-                        />
-                        <h5>{prod.title}</h5>
-                        <p>{new Intl.NumberFormat('en-NZ', {
-                                                             style: 'currency',
-                                                             currency: 'NZD'
-                                                           }).format(prod.price)}</p>
-                        {isSelected ? (
-                      <>
-                        <div className="qty-controls btn-1 green small">
-                          <button onClick={() => decreaseQty(prod.title)}>-</button>
-                          <span>{qty}</span>
-                          <button onClick={() => increaseQty(prod.title)}>+</button>
-                          <button onClick={() => removeProduct(prod)}>Remove</button>
-                        </div>
-                      </>
-                    ) : (
-                      <button className='btn-1 green small' onClick={() => addProduct(prod)}>Add</button>
-                    )}
-              </li>
-               )})}
-           </ul>
-            )}
-        </div>
-
-
-
-        </div>
-    
-    </div>
-  </div>
-)}
+      )}
 
       <div className="container">
         <div className="row align-items-center">
