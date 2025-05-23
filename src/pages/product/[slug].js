@@ -220,10 +220,14 @@ export default function ProductDetails({ product, relatedProducts }) {
             <div className='text-bk'>
               <div className='sub-title-bk'>Product</div>
               <h1>{product.title}</h1>
-              <p className="price-bk">{new Intl.NumberFormat('en-NZ', {
-                                                             style: 'currency',
-                                                             currency: 'NZD'
-                                                           }).format(product.price)}</p>
+              <p className="price-bk">
+  {product.price != null
+    ? new Intl.NumberFormat('en-NZ', {
+        style: 'currency',
+        currency: 'NZD',
+      }).format(product.price)
+    : 'Price is not available'}
+</p>
               <div className='count-bk'>
               <button onClick={() => setMainProductQty(qty => Math.max(1, qty - 1))}>−</button>
               <span>{mainProductQty}</span>
@@ -233,11 +237,12 @@ export default function ProductDetails({ product, relatedProducts }) {
             </div>
           </div>
         </div>
-
-        <div className='description-bk'>
-          <h2>Product Details</h2>
-          <PortableText value={product.description} />
-        </div>
+{product.description?.length > 0 && (
+  <div className='description-bk'>
+    <h2>Product Details</h2>
+    <PortableText value={product.description} />
+  </div>
+)}
 {product.pdfFile?.asset?.url && (
   <a
     href={product.pdfFile.asset.url}
