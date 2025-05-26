@@ -142,13 +142,12 @@ const Home = ({ products }) => {
         ></video>
         <div className="container">
           <h1 >Tough on Dirt. Gentle on Nature.</h1>
-          <p >Our products clean deeply without harming the planet. With eco-friendly ingredients and powerful performance, we make it easy to care for your home and the environment at the same time.</p>
+          <p >Our eco-friendly cleaning products are powerful on stains yet kind to the environment. Made with biodegradable, plant-based ingredients, they deliver a deep clean without harsh chemicals. Safe for your family, pets, and the planet — it’s cleaning you can feel good about. Make the sustainable switch without compromising on performance.</p>
           <Link href="/shop" className="btn-1 green">
             View Shop
             <svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg>
           </Link>
         </div>
-        <Link className="down-icon" href="#"><img src={iconImage.src} alt="Scroll down" /></Link>
       </section>
 
       {/* About Section */}
@@ -194,33 +193,7 @@ const Home = ({ products }) => {
           </div>
         </div>
       </div>
-      <section className="bk-home-content-section positiuon-relative">
-        <div className="description-bk">
-         <div className="row position-relative">
-          <div className="col-md-8">
-             <div ref={textRef2} className="text-bk">
-                <svg className="bubble-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">                         <path id="bubble-01" d="M727.546,58.656c310.955,0,449.911,393.087,420.51,513.555s-406.925,561.318-765.145,461.58S-18.559,637.168-.059,417.165,416.591,58.656,727.546,58.656Z" transform="translate(3.614 -58.656)" fill="#fff"></path>                     </svg>
-                <div className="wrap">
-                  <h2>Eco-power in every drop.</h2>
-                  <h5> At NZ Cleaning Supplies, we don't just aim to meet expectations—we aim to exceed them. </h5>
-                  {/* <p>Every product we create or distribute reflects our commitment to a cleaner planet. From biodegradable chemicals to energy-efficient equipment, we lead the charge in eco-friendly innovation. We understand that no two businesses are the same. That's why we offer tailored products and services that fit seamlessly into your operations, boosting efficiency and results. </p> */}
-                  <Link className="btn-1 green" href="/about">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
-                </div>
-             </div>
-          </div>
-          <div className="col-md-4">
-           <figure>
-             <img ref={sideimgRef2} src={cleanerImage.src}/>
-           </figure>
-          </div>
-          </div>
-        </div>
-        <img className="icon-leaf-float icon-leaf-3" src={iconImage.src} alt="Leaf Icon" />
-        <img className="icon-leaf-float icon-leaf-4" src={iconImage.src} alt="Leaf Icon" />
-        <img className="icon-leaf-float icon-leaf-5" src={iconImage.src} alt="Leaf Icon" />
-      </section>
-
-            <section className="bk-home-our-products">
+                  <section className="bk-home-our-products">
         <div className="container">
           <header>
             <h2>Our Products</h2>
@@ -275,8 +248,13 @@ const Home = ({ products }) => {
                      
                      <div className="name">{product.title}</div>
                      <div className="category">
-                      
-                      ${product.price}</div>
+  {product.price != null
+    ? new Intl.NumberFormat('en-NZ', {
+        style: 'currency',
+        currency: 'NZD',
+      }).format(product.price)
+    : 'Price is not available'}
+</div>
 <Link href={`/product/${product.slug.current}`} className="btn-1 green" tabIndex={0}>
   View Product
   <svg
@@ -303,6 +281,33 @@ const Home = ({ products }) => {
           </Swiper>
         </div>
       </section>
+      <section className="bk-home-content-section position-relative">
+        <div className="description-bk">
+         <div className="row position-relative">
+          <div className="col-md-8">
+             <div ref={textRef2} className="text-bk">
+                <svg className="bubble-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">                         <path id="bubble-01" d="M727.546,58.656c310.955,0,449.911,393.087,420.51,513.555s-406.925,561.318-765.145,461.58S-18.559,637.168-.059,417.165,416.591,58.656,727.546,58.656Z" transform="translate(3.614 -58.656)" fill="#fff"></path>                     </svg>
+                <div className="wrap">
+                  <h2>Eco-power in every drop.</h2>
+                  <h5> At NZ Cleaning Supplies, we don't just aim to meet expectations—we aim to exceed them. </h5>
+                  {/* <p>Every product we create or distribute reflects our commitment to a cleaner planet. From biodegradable chemicals to energy-efficient equipment, we lead the charge in eco-friendly innovation. We understand that no two businesses are the same. That's why we offer tailored products and services that fit seamlessly into your operations, boosting efficiency and results. </p> */}
+                  <Link className="btn-1 green" href="/about">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
+                </div>
+             </div>
+          </div>
+          <div className="col-md-4">
+           <figure>
+             <img ref={sideimgRef2} src={cleanerImage.src}/>
+           </figure>
+          </div>
+          </div>
+        </div>
+        <img className="icon-leaf-float icon-leaf-3" src={iconImage.src} alt="Leaf Icon" />
+        <img className="icon-leaf-float icon-leaf-4" src={iconImage.src} alt="Leaf Icon" />
+        <img className="icon-leaf-float icon-leaf-5" src={iconImage.src} alt="Leaf Icon" />
+      </section>
+
+
 
 
     </>

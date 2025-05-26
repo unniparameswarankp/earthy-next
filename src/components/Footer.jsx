@@ -119,7 +119,7 @@ const Footer = () => {
               <li><a href="tel:08002NZCLEAN"><span>Phone</span>0800 2 NZ CLEAN</a></li>
               <li><a href="mailto:info@cleaningsupplies.net.nz"><span>Email</span>info@cleaningsupplies.net.nz</a></li>
               <li><span>Auckland</span>8 Stanway Place, Ellerslie, Auckland 1051, New Zealand</li>
-              <li><span>Wellington</span>34 Kaiwharawhara Road, Kaiwharawhara, Wellington 6035, New Zealand</li>
+              <li><span>Wellington</span>34 Kaiwharawhara Road, Wellington 6035, New Zealand</li>
               <li><span>Christchurch</span>Unit 4, 4-6 O'Brien's Road, Christchurch 8042, New Zealand</li>
             </ul>
 

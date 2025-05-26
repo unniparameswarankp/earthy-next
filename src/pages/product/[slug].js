@@ -250,7 +250,7 @@ export default function ProductDetails({ product, relatedProducts }) {
     rel="noopener noreferrer"
     className="btn-1 green small"
   >
-    📄 Download Product PDF
+    📄 Download Safety Data Sheet
   </a>
 )}
 {product.gallery && product.gallery.length > 0 && (

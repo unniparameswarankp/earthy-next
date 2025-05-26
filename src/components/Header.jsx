@@ -8,6 +8,9 @@ import menuImage from '../assets/images/menu-bg.jpg';
 const Header = () => {
   const [atTop, setAtTop] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const [isListOpen, setIsListOpen] = useState(false);
+
+  const toggleList = () => setIsListOpen(!isListOpen);
 
   const router = useRouter(); // ✅ Define router
 
@@ -50,7 +53,18 @@ const Header = () => {
              <ul className='menu-bk'>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/shop">Shop</Link></li>
+              <li><Link href="/shop">Shop</Link>
+              <button onClick={toggleList}><svg fill="#ffffff" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"/></svg></button>
+              {isListOpen && (
+              <ul className='sub-menu'>
+                <li><Link className={router.pathname === '/category/chemical' ? 'active' : ''} href="/category/chemical">Chemical</Link></li>
+                <li><Link className={router.pathname === '/category/compostable-bags' ? 'active' : ''} href="/category/compostable-bags">Compostable Bags</Link></li>
+                <li><Link className={router.pathname === '/category/heavy-duty-wipes' ? 'active' : ''} href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
+                <li><Link className={router.pathname === '/category/rolls' ? 'active' : ''} href="/category/rolls">Rolls</Link></li>
+                <li><Link className={router.pathname === '/category/urinal-screen' ? 'active' : ''} href="/category/urinal-screen">Urinal Screen</Link></li>
+              </ul>
+              )}
+              </li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/contact">Contact</Link></li>
              </ul>
@@ -65,12 +79,37 @@ const Header = () => {
     <header className={`bk-header position-relative  ${atTop ? '' : 'add-bg'} ${isOpen ? 'menu-opened' : ''}`}>
     <div className="container">
       <div className="left-bk">
-        <button className='menu-btn' onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+        {/* <button className='menu-btn' onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           <img src={iconImage.src} alt="" />
           <img src={iconImage.src} alt="" />
           <img src={iconImage.src} alt="" />
           <img src={iconImage.src} alt="" />
+        </button> */}
+
+   
+        <button className='hamburger' onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
+
+        <nav>
+          <ul>
+            <li><Link className={router.pathname === '/' ? 'active' : ''} href="/">Home</Link></li>
+            <li><Link className={router.pathname === '/about' ? 'active' : ''} href="/about">About</Link></li>
+            <li><Link className={router.pathname === '/shop' ? 'active' : ''} href="/shop">Products</Link>
+            <ul className='sub-menu'>
+              <li><Link className={router.pathname === '/category/chemical' ? 'active' : ''} href="/category/chemical">Chemical</Link></li>
+              <li><Link className={router.pathname === '/category/compostable-bags' ? 'active' : ''} href="/category/compostable-bags">Compostable Bags</Link></li>
+              <li><Link className={router.pathname === '/category/heavy-duty-wipes' ? 'active' : ''} href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
+              <li><Link className={router.pathname === '/category/rolls' ? 'active' : ''} href="/category/rolls">Rolls</Link></li>
+              <li><Link className={router.pathname === '/category/urinal-screen' ? 'active' : ''} href="/category/urinal-screen">Urinal Screen</Link></li>
+            </ul>
+            </li>
+            <li><Link className={router.pathname === '/blog' ? 'active' : ''} href="/blog">Blog</Link></li>
+          </ul>
+        </nav>
+
       </div>
       <Link className="logo-bk" href="/">
        <img src={logoImage.src} alt="Banner" />
@@ -91,7 +130,17 @@ const Header = () => {
         <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5002 21.75C6.25756 21.75 5.2502 20.7426 5.2502 19.5C5.2502 18.2573 6.25756 17.25 7.5002 17.25C8.74285 17.25 9.7502 18.2573 9.7502 19.5C9.7502 20.7426 8.74285 21.75 7.5002 21.75ZM6.7502 19.5C6.7502 19.9142 7.08599 20.25 7.5002 20.25C7.91442 20.25 8.2502 19.9142 8.2502 19.5C8.2502 19.0858 7.91442 18.75 7.5002 18.75C7.08599 18.75 6.7502 19.0858 6.7502 19.5Z" fill="#1C274C"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5002 21.7501C15.2576 21.7501 14.2502 20.7427 14.2502 19.5001C14.2502 18.2574 15.2576 17.2501 16.5002 17.2501C17.7428 17.2501 18.7502 18.2574 18.7502 19.5001C18.7502 20.7427 17.7428 21.7501 16.5002 21.7501ZM15.7502 19.5001C15.7502 19.9143 16.086 20.2501 16.5002 20.2501C16.9144 20.2501 17.2502 19.9143 17.2502 19.5001C17.2502 19.0859 16.9144 18.7501 16.5002 18.7501C16.086 18.7501 15.7502 19.0859 15.7502 19.5001Z" fill="#1C274C"/>
         </svg></a> */}
-        <Link className="shop-link" href="/shop">SHOP</Link>
+        {/* <Link className="shop-link" href="/shop">SHOP</Link> */}
+        <nav>
+          <ul>
+            
+            <li><Link href="#"><svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.3545 22.2323C15.3344 21.7262 11.1989 20.2993 7.44976 16.5502C3.70065 12.8011 2.2738 8.66559 1.76767 6.6455C1.47681 5.48459 2.00058 4.36434 2.88869 3.72997L5.21694 2.06693C6.57922 1.09388 8.47432 1.42407 9.42724 2.80051L10.893 4.91776C11.5152 5.8165 11.3006 7.0483 10.4111 7.68365L9.24234 8.51849C9.41923 9.1951 9.96939 10.5846 11.6924 12.3076C13.4154 14.0306 14.8049 14.5807 15.4815 14.7576L16.3163 13.5888C16.9517 12.6994 18.1835 12.4847 19.0822 13.1069L21.1995 14.5727C22.5759 15.5257 22.9061 17.4207 21.933 18.783L20.27 21.1113C19.6356 21.9994 18.5154 22.5232 17.3545 22.2323ZM8.86397 15.136C12.2734 18.5454 16.0358 19.8401 17.8405 20.2923C18.1043 20.3583 18.4232 20.2558 18.6425 19.9488L20.3056 17.6205C20.6299 17.1665 20.5199 16.5348 20.061 16.2171L17.9438 14.7513L17.0479 16.0056C16.6818 16.5182 16.0047 16.9202 15.2163 16.7501C14.2323 16.5378 12.4133 15.8569 10.2782 13.7218C8.1431 11.5867 7.46219 9.7677 7.24987 8.7837C7.07977 7.9953 7.48181 7.31821 7.99439 6.95208L9.24864 6.05618L7.78285 3.93893C7.46521 3.48011 6.83351 3.37005 6.37942 3.6944L4.05117 5.35744C3.74413 5.57675 3.64162 5.89565 3.70771 6.15943C4.15989 7.96418 5.45459 11.7266 8.86397 15.136Z" fill="#0F0F0F"/>
+</svg> <span>0800 2 NZ CLEAN</span></Link></li>
+            <li><Link className="shop-link" href="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+        <Link className="shop-link d-md-none d-inline-flex" href="/shop">Shop</Link>
       </div>
     </div>
   </header>

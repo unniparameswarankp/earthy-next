@@ -91,11 +91,13 @@ const Shop = ({ products, categories, totalPages, currentPage }) => {
                   <div className="col-12 col-md-7">
                     <div className="name">{prod.title}</div>
                     <div className="category">
-                      {new Intl.NumberFormat('en-NZ', {
-                        style: 'currency',
-                        currency: 'NZD'
-                      }).format(prod.price)}
-                    </div>
+  {prod.price != null
+    ? new Intl.NumberFormat('en-NZ', {
+        style: 'currency',
+        currency: 'NZD',
+      }).format(prod.price)
+    : 'Price is not available'}
+</div>
                     <Link href={`/product/${prod.slug.current}`} className="btn-1 green">View Product</Link>
                   </div>
                 </div>
