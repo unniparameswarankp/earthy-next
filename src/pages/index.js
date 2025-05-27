@@ -176,7 +176,8 @@ const Home = ({ products }) => {
                     <h6>For over 70 years, NZ Cleaning Supplies has been more than just a supplier—we've been a partner in cleanliness, innovation, and sustainability. </h6>
                     <div className="desc3">From government buildings to five-star hotels, we've powered spotless spaces with cutting-edge equipment and eco-friendly solutions. Our journey began with a simple goal: to redefine cleaning standards across New Zealand. Today, with 2000+ products, global partnerships, and a nationwide presence, we continue to push boundaries—one cleaning solution at a time. </div>
                   </div>
-                  <img className="icon-leaf-2" src={iconImage.src} alt="Leaf Icon" />
+     
+                  <img className='kiwy-img-2 d-md-none' src={Image70.src} alt="" />
                 </div>
               </div>
             </div>

@@ -127,7 +127,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='d-md-flex flex-wrap text-center justify-content-md-between bottom-sec'>
-            <p>© 2025 Earthy</p>
+            <p>© 2025 Earthy Powered by <Link target='_blank' href="https://brandalchemy.co.nz/">Brand Alchemy</Link></p>
             <p className='d-flex gap-10px justify-content-center'><a href="#">Privacy policy</a><span>|</span><a href="#">Cookie Policy</a></p>
         </div>
       </div>

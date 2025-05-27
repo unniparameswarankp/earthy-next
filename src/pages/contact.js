@@ -4,6 +4,15 @@ import iconImage from '../assets/images/icon.png';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+import dynamic from 'next/dynamic';
+
+// Dynamically import to avoid SSR issues
+const LocationMap = dynamic(() => import('../components/LocationMap'), {
+  ssr: false,
+});
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name is too short'),
@@ -76,7 +85,11 @@ export default function Contact() {
         <img className="icon-bg icon-10" src={iconImage.src} />
       </div>
       <div className="container">
-        <div className="bk-contact">
+
+      <div className='row align-items-center flex-direction-md-reverce'>
+
+        <div className='col-md-6 col-12'>
+          <div className="bk-contact">
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
             <input
               type="text"
@@ -112,6 +125,55 @@ export default function Contact() {
           </form>
           {status && <p>{status}</p>}
         </div>
+        </div>
+        <div className='col-md-6 col-12'>
+<LocationMap />
+        </div>
+
+      </div>
+
+<div className='container'>
+      <div className='row mt-50'>
+        <div className='col-md-4 col-12 mt-50'>
+          <div className='green-box'>
+          <h3 className='text-center color-primary'>Auckland Office</h3>
+          <ul>
+            <li><FontAwesomeIcon icon={faMapMarkerAlt} />
+8 Stanway Place, Ellerslie, Auckland 1051, New Zealand </li>
+            <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
+            <li><FontAwesomeIcon icon={faEnvelope} />nfo@cleaningsupplies.net.nz</li>
+          </ul>
+          </div>
+        </div>
+        <div className='col-md-4 col-12 mt-50'>
+          <div className='green-box'>
+          <h3 className='text-center color-primary'>Wellington Office</h3>
+          <ul>
+            <li><FontAwesomeIcon icon={faMapMarkerAlt} />
+34 Kaiwharawhara Road, Wellington 6035, New Zealand </li>
+            <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
+            <li><FontAwesomeIcon icon={faEnvelope} />info@cleaningsupplies.net.nz</li>
+          </ul>
+          </div>
+        </div>
+        <div className='col-md-4 col-12 mt-50'>
+          <div className='green-box'>
+          <h3 className='text-center color-primary'>Christchurch Office</h3>
+          <ul>
+            <li><FontAwesomeIcon icon={faMapMarkerAlt} />Unit 4, 4-6 O'Brien's Road, Sockburn, Christchurch 8042, New Zealand </li>
+            <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
+            <li><FontAwesomeIcon icon={faEnvelope} />info@cleaningsupplies.nz</li>
+          </ul>
+          </div>
+        </div>
+      </div>
+
+        </div>
+
+
+
+
+
       </div>
     </div>
   );
