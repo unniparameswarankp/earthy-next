@@ -14,6 +14,9 @@ import cleanerImage from '../assets/images/cleaner.jpg';
 import cleaningProductImage from '../assets/images/cleaning-products.png'; 
 import ProductImage from '../assets/images/product.png';
 import KiwyImage from '../assets/images/kiwy.png'; 
+import HomeImage from '../assets/images/earthy-home.jpg'; 
+import Image70 from '../assets/images/70-years.png'; 
+import Imageroll from '../assets/images/toyletroll.jpeg'; 
 import { client } from '@/lib/sanity' // or '../lib/sanity' if not using aliases
 import { urlFor } from '@/lib/image' 
 
@@ -154,11 +157,11 @@ const Home = ({ products }) => {
       <section className="bk-home-about">
         <div className="description-bk parallax-wrapper">
           <h2>About <span>Earthy</span> <small>Environmental Solutions</small></h2>
-          <img ref={sideimgRef} className='kiwy-img' src={KiwyImage.src} alt="" />
+          <img ref={sideimgRef} className='kiwy-img' src={Image70.src} alt="" />
           <div className="row position-relative">
             <div className="col-md-4 col-12">
               <figure className="about-image">
-                <img ref={imageRef} src={cleaningImage.src} alt="Cleaning" />
+                <img ref={imageRef} src={HomeImage.src} alt="Cleaning" />
               </figure>
             </div>
             <div className="col-md-8 col-12">
@@ -215,6 +218,14 @@ const Home = ({ products }) => {
               769: {
                 slidesPerView: 2,
                 spaceBetween: 30,
+              },
+              993: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1025: {
+                slidesPerView: 4,
+                spaceBetween: 30,
               }
             }}
           >
@@ -224,27 +235,13 @@ const Home = ({ products }) => {
  <SwiperSlide key={product._id}>
 
               <div  className="bk-product-listing">
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="295.401"
-  height="409.001"
-  viewBox="0 0 295.401 409.001"
->
-  <path
-    d="M-9121,1999q-.388,0-.774-.01A30,30,0,0,1-9151,1969V1620a30,30,0,0,1,30-30h184.706c62.645,67.685,88.677,165.5,78.581,206.023-9.7,38.927-88.364,140.017-192.271,202.978Z"
-    transform="translate(9151 -1589.999)"
-    fill="#fffcd2"
-  />
-</svg>
-                <div className="row">
-                  <div className="col-12 col-md-5">
+           
                      <figure>
                         {product.image && (
               <img src={urlFor(product.image).width(300).url()} alt={product.title} />
             )}
                      </figure>
-                  </div>
-                  <div className="col-12 col-md-7">
+               
                      
                      <div className="name">{product.title}</div>
                      <div className="category">
@@ -273,14 +270,136 @@ const Home = ({ products }) => {
     />
   </svg>
 </Link>   
-                  </div>
-                </div>
+               
               </div>
             </SwiperSlide>
             ))}
           </Swiper>
         </div>
       </section>
+
+
+      <section className='bk-home-product-highlight'>
+        <div className='container'>
+          <div className='row align-items-center'>
+            <div className='col-md-6 col-12'>
+              <figure>
+                  <img src={Imageroll.src} alt="Cleaning" />
+              </figure>
+            </div>
+            <div className='col-md-6 col-12'>
+              <div className='text-bk'>
+              <div className='price'>Price is not available</div>
+              <div className='title'>400 Sheets 2 PLY Toilet Roll</div>
+              <div className='description'>
+                <p>Earthy Toilet Tissue is a high-performance toilet paper designed for superior quality and comfort. Each roll is individually wrapped for added hygiene. This affordable 2-ply tissue offers excellent absorbency, while being both soft and durable.</p>
+<ul>
+                <li>Premium toilet paper with a quilted emboss for added comfort</li>
+
+                <li>Individually wrapped rolls for enhanced hygiene</li>
+
+                <li>Soft, strong, and highly absorbent</li>
+
+                <li>2-ply tissue with high capacity and outstanding performance</li>
+
+                <li>Packaged in a carton of 48 rolls, each containing 400 sheets</li>
+                </ul>
+                <Link className='btn-1 green' href="/product/400-sheets-2-ply-toilet-roll">View Product</Link>
+</div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section className='bk-home-our-range'>
+        <div className='left-container'>
+          <div className='inner-bk'>
+          <Swiper
+            modules={[Navigation]}
+            navigation
+            pagination={{ clickable: true }}
+            loop={true} 
+
+            // Responsive breakpoints
+            breakpoints={{
+              0: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              769: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              993: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+              1025: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              }
+            }}
+          >
+
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src={cleaningImage.src} />
+                </figure>
+                <span>Products</span>
+                <h2>Chemical</h2>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src={cleaningImage.src} />
+                </figure>
+                <span>Products</span>
+                <h2>Compostable Bags</h2>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src={cleaningImage.src} />
+                </figure>
+                <span>Products</span>
+                <h2>Heavy Duty Wipes</h2>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src={cleaningImage.src} />
+                </figure>
+                <span>Products</span>
+                <h2>Rolls</h2>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src={cleaningImage.src} />
+                </figure>
+                <span>Products</span>
+                <h2>Urinal Screen</h2>
+              </div>
+            </SwiperSlide>
+            
+
+          </Swiper>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
       <section className="bk-home-content-section position-relative">
         <div className="description-bk">
          <div className="row position-relative">

@@ -413,6 +413,15 @@ padding-right: 15px;
       width: 1600px;
   }
 }
+.left-container{
+  max-width: 100%;
+  width: calc(50% + 650px);
+  margin-left: auto;
+  padding-left: 15px;
+  @media (min-width: 1700px) {
+    width: calc(50% + 800px);
+  }
+}
 .bk-header{
 position: fixed;
 /*	padding: 3.125rem 0;*/
@@ -593,7 +602,7 @@ figure, video{
 .container{
   position: relative;
   z-index: 3;
-      padding-left: 8%;
+      padding-left: 5%;
 }
 h1{
   font-size: 4rem;
@@ -794,6 +803,7 @@ p{
   line-height: 1;
   white-space: nowrap;
   z-index: 5;
+  font-family: 'Bainsley';
   .text-secondary{
     color: #3b863e;
   }
@@ -803,6 +813,11 @@ p{
   margin: 3rem 0 0;
   position: relative;
   z-index: 10;
+  .container{
+    @media (min-width: 768px) {
+      padding: 0 10%;
+    }
+  }
 }
 .embed-responsive {
   position: relative;
@@ -1103,11 +1118,10 @@ p{
 }
 .kiwy-img{
 position: absolute;
-right: -20vw;
+right: -25vw;
 top: 100px;
-width: 30vw;
+width: 45vw;
 z-index: 5;
-transform: scaleX(-1);
 }
 .icon-leaf-float{
   position: absolute;
@@ -1301,7 +1315,7 @@ transform: scaleX(-1);
       transform: none !important;
       left: 0;
       padding: 3%;
-      font-size: 25vw;
+      font-size: 20vw;
     }
 }
 
@@ -2191,4 +2205,150 @@ transform: scaleX(-1);
 }
 .bk-product-listing{
   height: 100%!important;
+}
+
+@media (max-width: 1024px) {
+.kiwy-img{
+top: -100px;
+right: -15vw;
+}
+}
+
+@media (max-width: 768px) {
+.kiwy-img{
+display: none;
+}
+}
+
+.bk-home-our-products{
+  .bk-product-listing{
+    display: block;
+    padding: 30px 20px 80px;
+    position: relative;
+    figure{
+      margin-bottom: 1rem;
+      padding: 0 10%;
+    }
+    .name{
+      font-size: 1.5rem;
+    }
+    .btn-1{
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translate(-50%);
+      min-width: max-content;
+    }
+  }
+}
+.swiper-button-disabled{
+  display: none!important;
+}
+
+.bk-home-product-highlight{
+  padding: 100px 0;
+  .container{
+    position: relative;
+    z-index: 5;
+  }
+  figure{
+    position: relative;
+    padding-bottom: 75%;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    margin: 0;
+    @media (max-width: 767px) {
+      margin-bottom: 2rem;
+    }
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .price{
+    color: #3b863e;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .title {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-family: 'Bainsley';
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  p{
+    margin-bottom: 0;
+  }
+  .btn-1{
+    margin-top: 1rem;
+  }
+  li{
+    position: relative;
+    padding-bottom: .5rem;
+    &::after{
+      display: block;
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: -20px;
+      height: .8em;
+      width: .8em;
+      background-color: #3b863e;
+      border-top-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+  }
+  .text-bk{
+     @media (min-width: 768px) {
+        padding-left: 50px;
+     }
+  }
+}
+.bk-home-our-range{
+  position: relative;
+  margin-top: 100px;
+  z-index: 5;
+  .inner-bk{
+    @media (min-width: 992px) {
+    margin-right: -50px;
+    }
+  }
+  figure{
+    margin: 0 0 1rem 0;
+    position: relative;
+    padding-bottom: 120%;
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .swiper-button-prev{
+    display: none;
+  }
+  .swiper-button-next{
+    position: absolute;
+    right: 0;
+    top: calc(50% - 50px);
+    height: 70px;
+    width: 60px;
+    background-color: #2d5605;
+    color: #ffffff;
+    opacity: .7;
+    transition: .4s;
+    @media (min-width: 992px) {
+      right: 50px;
+    }
+    &:hover{
+      opacity: 1;
+    }
+  }
 }
