@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import iconImage from '../assets/images/icon.png';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -8,8 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { useEffect, useState } from 'react';
 import L from 'leaflet';
+
 
 // Fix leaflet marker icon issue
 delete L.Icon.Default.prototype._getIconUrl;
