@@ -47,7 +47,7 @@ export default function LocationMap() {
 
   return (
     <MapContainer
-      center={[-41.2587952, 174.7896896]}
+      center={[-40.2587952, 174.7896896]}
       zoom={6}
       scrollWheelZoom={false}
       style={{ height: '400px', width: '100%' }}
