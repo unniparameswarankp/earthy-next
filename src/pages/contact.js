@@ -10,7 +10,7 @@ import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg
 
 import dynamic from 'next/dynamic';
 
-const LocationMap = dynamic(() => import('../../components/LocationMap'), {
+const LocationMap = dynamic(() => import('../components/LocationMap'), {
   ssr: false,
 });
 
