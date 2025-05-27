@@ -1,83 +1,17 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import iconImage from '../assets/images/icon.png';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
+import dynamic from 'next/dynamic';
 
-
-// Fix leaflet marker icon issue
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+// Dynamically import LocationMap with SSR disabled
+const LocationMap = dynamic(() => import('../components/LocationMap'), {
+  ssr: false,
 });
-
-const locations = [
-  {
-    lat: -36.897603,
-    lng: 174.81503,
-    label: 'Auckland Office',
-    address: '8 Stanway Place, Ellerslie, Auckland 1051',
-  },
-  {
-    lat: -41.2587952,
-    lng: 174.7896896,
-    label: 'Wellington Office',
-    address: '34 Kaiwharawhara Road, Wellington 6035',
-  },
-  {
-    lat: -43.538496,
-    lng: 172.5563941,
-    label: 'Christchurch Office',
-    address: "Unit 4, 4-6 O'Brien's Road, Sockburn, Christchurch 8042",
-  },
-];
-
-function LocationMap() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    // Only set client true after component mounts (so window exists)
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return <div>Loading map...</div>; // or just null
-  }
-
-  return (
-    <MapContainer
-      center={[-41.2587952, 174.7896896]}
-      zoom={6}
-      scrollWheelZoom={false}
-      style={{ height: '400px', width: '100%' }}
-    >
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {locations.map(({ lat, lng, label, address }, idx) => (
-        <Marker key={idx} position={[lat, lng]}>
-          <Popup>
-            <strong>{label}</strong>
-            <br />
-            {address}
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
-  );
-}
-
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name is too short'),
@@ -150,95 +84,90 @@ export default function Contact() {
         <img className="icon-bg icon-10" src={iconImage.src} />
       </div>
       <div className="container">
+        <div className="row align-items-center flex-direction-md-reverce">
+          <div className="col-md-6 col-12">
+            <div className="bk-contact">
+              <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  {...register('name')}
+                />
+                {errors.name && <p className="error">{errors.name.message}</p>}
 
-      <div className='row align-items-center flex-direction-md-reverce'>
+                <input
+                  type="tel"
+                  placeholder="Your Phone"
+                  {...register('phone')}
+                />
+                {errors.phone && <p className="error">{errors.phone.message}</p>}
 
-        <div className='col-md-6 col-12'>
-          <div className="bk-contact">
-          <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-            <input
-              type="text"
-              placeholder="Your Name"
-              {...register('name')}
-            />
-            {errors.name && <p className="error">{errors.name.message}</p>}
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  {...register('email')}
+                />
+                {errors.email && <p className="error">{errors.email.message}</p>}
 
-            <input
-              type="tel"
-              placeholder="Your Phone"
-              {...register('phone')}
-            />
-            {errors.phone && <p className="error">{errors.phone.message}</p>}
+                <textarea
+                  placeholder="Your Message"
+                  rows="5"
+                  {...register('message')}
+                />
+                {errors.message && <p className="error">{errors.message.message}</p>}
 
-            <input
-              type="email"
-              placeholder="Your Email"
-              {...register('email')}
-            />
-            {errors.email && <p className="error">{errors.email.message}</p>}
-
-            <textarea
-              placeholder="Your Message"
-              rows="5"
-              {...register('message')}
-            />
-            {errors.message && <p className="error">{errors.message.message}</p>}
-
-            <button className="btn-1 green" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
-          {status && <p>{status}</p>}
-        </div>
-        </div>
-        <div className='col-md-6 col-12'>
-<LocationMap />
-        </div>
-
-      </div>
-
-<div className='container'>
-      <div className='row mt-50'>
-        <div className='col-md-4 col-12 mt-50'>
-          <div className='green-box'>
-          <h3 className='text-center color-primary'>Auckland Office</h3>
-          <ul>
-            <li><FontAwesomeIcon icon={faMapMarkerAlt} />
-8 Stanway Place, Ellerslie, Auckland 1051, New Zealand </li>
-            <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
-            <li><FontAwesomeIcon icon={faEnvelope} />nfo@cleaningsupplies.net.nz</li>
-          </ul>
+                <button className="btn-1 green" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+              </form>
+              {status && <p>{status}</p>}
+            </div>
+          </div>
+          <div className="col-md-6 col-12">
+            <LocationMap />
           </div>
         </div>
-        <div className='col-md-4 col-12 mt-50'>
-          <div className='green-box'>
-          <h3 className='text-center color-primary'>Wellington Office</h3>
-          <ul>
-            <li><FontAwesomeIcon icon={faMapMarkerAlt} />
-34 Kaiwharawhara Road, Wellington 6035, New Zealand </li>
-            <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
-            <li><FontAwesomeIcon icon={faEnvelope} />info@cleaningsupplies.net.nz</li>
-          </ul>
+
+        <div className="container">
+          <div className="row mt-50">
+            <div className="col-md-4 col-12 mt-50">
+              <div className="green-box">
+                <h3 className="text-center color-primary">Auckland Office</h3>
+                <ul>
+                  <li><FontAwesomeIcon icon={faMapMarkerAlt} />
+                    8 Stanway Place, Ellerslie, Auckland 1051, New Zealand
+                  </li>
+                  <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
+                  <li><FontAwesomeIcon icon={faEnvelope} />nfo@cleaningsupplies.net.nz</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-4 col-12 mt-50">
+              <div className="green-box">
+                <h3 className="text-center color-primary">Wellington Office</h3>
+                <ul>
+                  <li><FontAwesomeIcon icon={faMapMarkerAlt} />
+                    34 Kaiwharawhara Road, Wellington 6035, New Zealand
+                  </li>
+                  <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
+                  <li><FontAwesomeIcon icon={faEnvelope} />info@cleaningsupplies.net.nz</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-4 col-12 mt-50">
+              <div className="green-box">
+                <h3 className="text-center color-primary">Christchurch Office</h3>
+                <ul>
+                  <li><FontAwesomeIcon icon={faMapMarkerAlt} />
+                    Unit 4, 4-6 O'Brien's Road, Sockburn, Christchurch 8042, New Zealand
+                  </li>
+                  <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
+                  <li><FontAwesomeIcon icon={faEnvelope} />info@cleaningsupplies.nz</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <div className='col-md-4 col-12 mt-50'>
-          <div className='green-box'>
-          <h3 className='text-center color-primary'>Christchurch Office</h3>
-          <ul>
-            <li><FontAwesomeIcon icon={faMapMarkerAlt} />Unit 4, 4-6 O'Brien's Road, Sockburn, Christchurch 8042, New Zealand </li>
-            <li><FontAwesomeIcon icon={faPhone} />0800 2 NZ CLEAN</li>
-            <li><FontAwesomeIcon icon={faEnvelope} />info@cleaningsupplies.nz</li>
-          </ul>
-          </div>
-        </div>
-      </div>
-
-        </div>
-
-
-
-
-
       </div>
     </div>
   );
