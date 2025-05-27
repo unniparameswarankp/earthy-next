@@ -6,13 +6,78 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import 'leaflet/dist/leaflet.css';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useEffect, useState } from 'react';
+import L from 'leaflet';
 
+// Fix leaflet marker icon issue
+delete L.Icon.Default.prototype._getIconUrl;
 
-import dynamic from 'next/dynamic';
-
-const LocationMap = dynamic(() => import('../components/LocationMap'), {
-  ssr: false,
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
+
+const locations = [
+  {
+    lat: -36.897603,
+    lng: 174.81503,
+    label: 'Auckland Office',
+    address: '8 Stanway Place, Ellerslie, Auckland 1051',
+  },
+  {
+    lat: -41.2587952,
+    lng: 174.7896896,
+    label: 'Wellington Office',
+    address: '34 Kaiwharawhara Road, Wellington 6035',
+  },
+  {
+    lat: -43.538496,
+    lng: 172.5563941,
+    label: 'Christchurch Office',
+    address: "Unit 4, 4-6 O'Brien's Road, Sockburn, Christchurch 8042",
+  },
+];
+
+function LocationMap() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // Only set client true after component mounts (so window exists)
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return <div>Loading map...</div>; // or just null
+  }
+
+  return (
+    <MapContainer
+      center={[-41.2587952, 174.7896896]}
+      zoom={6}
+      scrollWheelZoom={false}
+      style={{ height: '400px', width: '100%' }}
+    >
+      <TileLayer
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      {locations.map(({ lat, lng, label, address }, idx) => (
+        <Marker key={idx} position={[lat, lng]}>
+          <Popup>
+            <strong>{label}</strong>
+            <br />
+            {address}
+          </Popup>
+        </Marker>
+      ))}
+    </MapContainer>
+  );
+}
+
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name is too short'),
