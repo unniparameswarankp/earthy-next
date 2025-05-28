@@ -37,9 +37,15 @@ export default function Page({ page }) {
   }
 
   return (
-    <main className="max-w-3xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">{page.title}</h1>
-      <PortableText value={page.content} />
-    </main>
+
+    <div className="blog-detail container">
+          <h1>{page.title}</h1>
+          
+        
+    
+          <div className="content">
+            <PortableText value={page.content} />
+          </div>
+        </div>
   );
 }
