@@ -68,7 +68,17 @@ const Shop = ({ products, categories, totalPages, currentPage }) => {
           <p>Our cleaning chemicals are developed with biodegradable and non-toxic ingredients, ensuring they are safe for both users and the environment.</p>
         </div>
         <span className='down'>
-          {/* arrow icon */}
+          <svg className="next-arrow-circle mt-5 scroll-to" data-scroll-target="#our-products" data-offset="-150" xmlns="http://www.w3.org/2000/svg" width="101" height="101" viewBox="0 0 101 101">                         
+            <g transform="translate(-910 -573)">                             
+              <g transform="translate(968.568 563.5) rotate(90)">
+                <path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" strokeLinecap="round" strokeWidth="2" />
+              </g>                             
+              <g transform="translate(910 573)" fill="none" stroke="#3a5322" strokeWidth="2">
+                <circle cx="50.5" cy="50.5" r="50.5" stroke="none" />
+                <circle cx="50.5" cy="50.5" r="49.5" fill="none" />
+              </g>                         
+            </g>                     
+          </svg>
         </span>
         {/* Background icons */}
         <img className='icon-bg icon-1' src={iconImage.src} />
