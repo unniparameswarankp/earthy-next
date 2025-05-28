@@ -1696,7 +1696,7 @@ z-index: 5;
   h2{
     font-size: 2rem;
     color: #3b863e;
-     @media (max-width: 767px) {
+     @media (min-width: 768px) {
       font-size: 2.5rem;
      }
   }
