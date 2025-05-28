@@ -1627,6 +1627,9 @@ z-index: 5;
 .bk-product-detail{
   padding-top: 200px;
   padding-bottom: 10px;
+  .swiper-wrapper{
+    padding-bottom: 50px;
+  }
   img{
     width: 100%;
     height: auto;
@@ -2434,4 +2437,7 @@ display: none;
       padding-left: 50px;
     }
   }
+}
+.w-1300{
+  width: 1300px!important;
 }

@@ -258,7 +258,7 @@ export default function ProductDetails({ product, relatedProducts }) {
         <div className='gallery-bk'>
           <h2 className='text-center'>Gallery</h2>
           <Swiper
-            modules={[Pagination]}
+            modules={[Navigation, Pagination]}
             navigation
             pagination={{ clickable: true }}
             breakpoints={{
@@ -281,7 +281,61 @@ export default function ProductDetails({ product, relatedProducts }) {
           </Swiper>
         </div>
         )}
-      </div>
-    </div>
+
+ </div>
+  
+<div className='container w-1300'>
+
+        {relatedProducts?.length > 0 && (
+                 <div className='gallery-bk'>
+                      <h2 className='text-center'>Products you may like E-commerce</h2>
+                     <Swiper
+            modules={[Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 20 },
+              769: { slidesPerView: 1, spaceBetween: 30 },
+              993: { slidesPerView: 2, spaceBetween: 30 }
+            }}
+          >
+                    {relatedProducts.map((prod) => {
+                      const isSelected = selectedProducts.some(p => p.title === prod.title);
+                      const qty = getProductQuantity(prod.title);
+                      return (
+                          <SwiperSlide key={prod._id}>
+              <div className="bk-product-listing">
+                <div className="row">
+                  <div className="col-12 col-md-5">
+                    <figure>
+                      {prod.image && (
+                        <img src={urlFor(prod.image).width(1200).url()} alt={prod.title} />
+                      )}
+                    </figure>
+                  </div>
+                  <div className="col-12 col-md-7">
+                    <div className="name">{prod.title}</div>
+                    <div className="category">
+                      {prod.price != null
+                        ? new Intl.NumberFormat('en-NZ', {
+                            style: 'currency',
+                            currency: 'NZD',
+                          }).format(prod.price)
+                        : 'Price is not available'}
+                    </div>
+                    <Link href={`/product/${prod.slug.current}`} className="btn-1 green">
+                      View Product
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+                      );
+                    })}
+                 </Swiper>
+                 </div>
+                )}
+                </div>
+       </div>
   );
 }
