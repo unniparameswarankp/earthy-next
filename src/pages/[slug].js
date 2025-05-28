@@ -1,4 +1,4 @@
-import { client } from '../lib/sanityClient';
+import { client } from '@/lib/sanity';
 import { PortableText } from '@portabletext/react';
 import { getPageBySlug } from '../lib/queries';
 
