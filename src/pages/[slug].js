@@ -1,6 +1,6 @@
-import { client } from '../../lib/sanityClient';
+import { client } from '../lib/sanityClient';
 import { PortableText } from '@portabletext/react';
-import { getPageBySlug } from '../../lib/queries';
+import { getPageBySlug } from '../lib/queries';
 
 
 export async function getStaticPaths() {
