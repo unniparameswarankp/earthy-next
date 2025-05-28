@@ -178,7 +178,7 @@ export default function ProductDetails({ product, relatedProducts }) {
                       const qty = getProductQuantity(prod.title);
                       return (
                         <li key={prod._id}>
-                          <img src={urlFor(prod.image).width(400).url()} alt={prod.title} />
+                          <img src={urlFor(prod.image).width(1200).url()} alt={prod.title} />
                           <h5>{prod.title}</h5>
                           <p>{new Intl.NumberFormat('en-NZ', {
                             style: 'currency',
@@ -210,7 +210,7 @@ export default function ProductDetails({ product, relatedProducts }) {
           <div className="col-md-6 col-12">
             {product.image && (
               <img
-                src={urlFor(product.image).width(500).url()}
+                src={urlFor(product.image).width(1200).url()}
                 alt={product.title}
                 style={{ borderRadius: '10px' }}
               />
@@ -220,6 +220,7 @@ export default function ProductDetails({ product, relatedProducts }) {
             <div className='text-bk'>
               <div className='sub-title-bk'>Product</div>
               <h1>{product.title}</h1>
+              <p className='price-desc'>+15% GST + Freight Charges (Free delivery available only in Auckland,Wellington and Christchurch for orders above $300) </p>
               <p className="price-bk">
   {product.price != null
     ? new Intl.NumberFormat('en-NZ', {

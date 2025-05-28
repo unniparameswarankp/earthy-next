@@ -102,7 +102,7 @@ const Shop = ({ products, categories, totalPages, currentPage }) => {
                   <div className="col-12 col-md-5">
                     <figure>
                       {prod.image && (
-                        <img src={urlFor(prod.image).width(200).url()} alt={prod.title} />
+                        <img src={urlFor(prod.image).width(1200).url()} alt={prod.title} />
                       )}
                     </figure>
                   </div>

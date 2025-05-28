@@ -250,7 +250,7 @@ const Home = ({ products }) => {
            
                      <figure>
                         {product.image && (
-              <img src={urlFor(product.image).width(300).url()} alt={product.title} />
+              <img src={urlFor(product.image).width(1200).url()} alt={product.title} />
             )}
                      </figure>
                

@@ -348,8 +348,8 @@ width: 100%;
 overflow: hidden;
 }
 .btn-1{
-  padding: .875rem 1.875rem;
-  font-size: .9375rem;
+  padding: .875rem 1.7rem;
+  font-size: 1rem;
   transition: .2s linear all;
   border-radius: 2.5rem;
   text-decoration: none;
@@ -760,7 +760,7 @@ p{
   }
   }
   .desc3{
-      font-size: .9375rem;
+      font-size: 1rem;
       line-height: 1.5em;
       margin-top: 35px;
       @media (min-width: 769px) and (max-width: 1440px) {
@@ -900,7 +900,7 @@ p{
       transition: .3s linear all;
   }
   p{
-      font-size: .9375rem;
+      font-size: 1rem;
       line-height: 1.5em;
       margin-bottom: 3rem !important;
       margin-top: 3rem !important;
@@ -1648,7 +1648,7 @@ z-index: 5;
     }
   }
   .text-bk{
-    max-width: 400px;
+    max-width: 450px;
     margin-left: auto;
     font-size: 1.1rem;
   }

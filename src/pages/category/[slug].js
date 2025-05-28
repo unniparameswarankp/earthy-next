@@ -64,7 +64,7 @@ export default function CategoryPage({ category, currentPage, totalPages }) {
                   <div className="col-12 col-md-5">
                     <figure>
                       <img
-                        src={urlFor(post.image).width(400).url()}
+                        src={urlFor(post.image).width(1200).url()}
                         alt={post.title}
                       />
                     </figure>
