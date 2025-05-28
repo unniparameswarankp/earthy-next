@@ -16,7 +16,7 @@ export default function CategoryPage({ category, currentPage, totalPages }) {
       <div className='bk-product-listing-banner'>
         <div className='container'>
           <h1>{category.title}</h1>
-          <p>Our cleaning chemicals are developed with biodegradable and non-toxic ingredients, ensuring they are safe for both users and the environment.</p>
+          <p>{category.description}</p>
         </div>
         <span className='down'>
           <svg className="next-arrow-circle mt-5 scroll-to" data-scroll-target="#our-products" data-offset="-150" xmlns="http://www.w3.org/2000/svg" width="101" height="101" viewBox="0 0 101 101">                         
@@ -122,6 +122,7 @@ export async function getServerSideProps(context) {
   const categoryQuery = `
     *[_type == "category" && slug.current == $slug][0]{
       title,
+      description,
       slug,
       "posts": *[_type == "product" && references(^._id)] | order(_createdAt desc) [${start}...${start + PRODUCTS_PER_PAGE}] {
         title,
@@ -139,6 +140,7 @@ export async function getServerSideProps(context) {
   const allCategoriesQuery = `
     *[_type == "category"]{
       title,
+      description,
       slug
     }
   `;

@@ -1593,6 +1593,7 @@ z-index: 5;
       top: 60%;
       left: 60%;
       transform: rotate(105deg);
+      display: none;
     }
      &.icon-6{
       top: 30%;
