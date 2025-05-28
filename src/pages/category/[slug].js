@@ -1,5 +1,5 @@
 import { client, urlFor } from '../../lib/sanity';
-import iconImage from '../../assets/images/icon.png'; 
+import iconImage from '../../assets/images/leaf-icon.png'; 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 

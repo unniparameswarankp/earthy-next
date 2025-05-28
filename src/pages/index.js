@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import bannerImage from '../assets/images/banner.jpg'; 
-import iconImage from '../assets/images/icon.png'; 
+import iconImage from '../assets/images/leaf-icon.png'; 
 import cleaningImage from '../assets/images/cleaning.jpg'; 
 import cleanerImage from '../assets/images/cleaner.jpg'; 
 import cleaningProductImage from '../assets/images/cleaning-products.png'; 

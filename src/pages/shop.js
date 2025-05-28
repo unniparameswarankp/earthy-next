@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import iconImage from '../assets/images/icon.png';
+import iconImage from '../assets/images/leaf-icon.png';
 import { client } from '@/lib/sanity';
 import { urlFor } from '@/lib/image';
 
