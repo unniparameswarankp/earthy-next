@@ -1122,7 +1122,7 @@ p{
 }
 .kiwy-img{
 position: absolute;
-right: -25vw;
+right: -23vw;
 top: 100px;
 width: 45vw;
 z-index: 5;
@@ -2193,21 +2193,23 @@ display: none;
 .bk-home-our-products{
   .bk-product-listing{
     display: block;
-    padding: 30px 20px 80px;
+    padding: 0px 0px 40px;
     position: relative;
+    border: none;
+    background-color: transparent;
     figure{
       margin-bottom: 1rem;
       padding: 0 10%;
     }
     .name{
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     .btn-1{
       position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translate(-50%);
-      min-width: max-content;
+      bottom: 0px;
+      left: 0%;
+      width: 100%;
+      justify-content: center;
     }
   }
 }
@@ -2224,8 +2226,9 @@ display: none;
   figure{
     position: relative;
     padding-bottom: 75%;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
     margin: 0;
+    border-radius: 2rem;
+    overflow: hidden;
     @media (max-width: 767px) {
       margin-bottom: 2rem;
     }
@@ -2275,15 +2278,15 @@ display: none;
   }
   .text-bk{
      @media (min-width: 768px) {
-        padding-left: 50px;
+        padding-right: 50px;
      }
   }
 }
 .bk-home-our-range{
   position: relative;
-  margin-top: 100px;
   z-index: 5;
   .inner-bk{
+    margin-right: 15px;
     @media (min-width: 992px) {
     margin-right: -50px;
     }
@@ -2292,6 +2295,8 @@ display: none;
     margin: 0 0 1rem 0;
     position: relative;
     padding-bottom: 120%;
+    border-radius: 1rem;
+    overflow: hidden;
     img{
       position: absolute;
       top: 0;
@@ -2362,6 +2367,70 @@ display: none;
         height: 1em;
         width: 1em;
       }
+    }
+  }
+}
+.bk-home-not{
+  @media (min-width: 768px) {
+  margin-bottom: 100px;
+  }
+  figure{
+    position: relative;
+    padding: 0;
+    padding-bottom: 80%;
+    border-radius: 50%;
+    width: 80%;
+    margin: 0 auto 2rem;
+    @media (min-width: 768px) {
+      margin: 0 auto;
+    }
+    &::after{
+      display: block;
+      content: "";
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: #3b863e;
+      top: 0;
+      left: 0;
+      opacity: .6;
+    }
+    &::before{
+      display: block;
+      content: "";
+      position: absolute;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      background-color: #3b863e;
+      bottom: 0;
+      right: 0;
+      opacity: .3;
+    }
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 2rem;
+      transform: rotate(8deg);
+    }
+  }
+  h2{
+    font-size: 3rem;
+    color: #2d5605;
+    max-width: 500px;
+    @media (min-width: 992px) {
+      font-size: 3.5rem;
+    }
+  }
+  p{
+    max-width: 600px;
+    @media (min-width: 768px) {
+      padding-left: 50px;
     }
   }
 }

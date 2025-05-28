@@ -19,6 +19,8 @@ import Image70 from '../assets/images/70-years.png';
 import Imageroll from '../assets/images/toyletroll.jpeg'; 
 import { client } from '@/lib/sanity' // or '../lib/sanity' if not using aliases
 import { urlFor } from '@/lib/image' 
+import bottleImage from '../assets/images/bottle.jpg'; 
+
 
 
 
@@ -28,7 +30,7 @@ import { urlFor } from '@/lib/image'
 
 export async function getStaticProps() {
   // Fetch all products and their categories
-  const productsQuery = `*[_type == "product"][0...4]{
+  const productsQuery = `*[_type == "product"][0...6]{
   _id,
   title,
   slug, // ✅ Add this line
@@ -197,7 +199,8 @@ const Home = ({ products }) => {
           </div>
         </div>
       </div>
-                  <section className="bk-home-our-products">
+
+      <section className="bk-home-our-products">
         <div className="container">
           <header>
             <h2>Our Products</h2>
@@ -216,16 +219,24 @@ const Home = ({ products }) => {
                 slidesPerView: 1,
                 spaceBetween: 20,
               },
-              769: {
+              575: {
                 slidesPerView: 2,
-                spaceBetween: 30,
+                spaceBetween: 20,
               },
-              993: {
+              769: {
                 slidesPerView: 3,
                 spaceBetween: 30,
               },
-              1025: {
+              993: {
                 slidesPerView: 4,
+                spaceBetween: 30,
+              },
+              1200: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+              },
+              1300: {
+                slidesPerView: 6,
                 spaceBetween: 30,
               }
             }}
@@ -280,9 +291,52 @@ const Home = ({ products }) => {
       </section>
 
 
+      <section className="bk-home-content-section position-relative">
+        <div className="description-bk">
+         <div className="row position-relative">
+          <div className="col-md-8">
+             <div ref={textRef2} className="text-bk">
+                <svg className="bubble-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">                         <path id="bubble-01" d="M727.546,58.656c310.955,0,449.911,393.087,420.51,513.555s-406.925,561.318-765.145,461.58S-18.559,637.168-.059,417.165,416.591,58.656,727.546,58.656Z" transform="translate(3.614 -58.656)" fill="#fff"></path>                     </svg>
+                <div className="wrap">
+                  <h2>Eco-power in every drop.</h2>
+                  <h5> At NZ Cleaning Supplies, we don't just aim to meet expectations—we aim to exceed them. </h5>
+                  {/* <p>Every product we create or distribute reflects our commitment to a cleaner planet. From biodegradable chemicals to energy-efficient equipment, we lead the charge in eco-friendly innovation. We understand that no two businesses are the same. That's why we offer tailored products and services that fit seamlessly into your operations, boosting efficiency and results. </p> */}
+                  <Link className="btn-1 green" href="/about">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
+                </div>
+             </div>
+          </div>
+          <div className="col-md-4">
+           <figure>
+             <img ref={sideimgRef2} src={cleanerImage.src}/>
+           </figure>
+          </div>
+          </div>
+        </div>
+        <img className="icon-leaf-float icon-leaf-3" src={iconImage.src} alt="Leaf Icon" />
+        <img className="icon-leaf-float icon-leaf-4" src={iconImage.src} alt="Leaf Icon" />
+        <img className="icon-leaf-float icon-leaf-5" src={iconImage.src} alt="Leaf Icon" />
+      </section>
+
+      <section className='bk-home-not'>
+        <div className='container'>
+          <div className='row justify-content-center align-items-center'>
+            <div className='col-md-5 col-12'>
+              <figure>
+                <img src={bottleImage.src}/>
+              </figure>
+            </div>
+            <div className='col-md-7 col-12'>
+              <h2>Our chemical Bottles Are Recycled</h2>
+              <p>All our chemical bottles are responsibly recycled to minimize environmental impact. After use, they are thoroughly cleaned and sent to certified recycling facilities where they are processed according to industry standards. This practice helps reduce plastic waste, supports sustainability, and ensures compliance with environmental regulations. By recycling our chemical containers, we are committed to protecting the planet and promoting a greener future.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className='bk-home-product-highlight'>
         <div className='container'>
-          <div className='row align-items-center'>
+          <div className='row align-items-center flex-direction-md-reverce'>
             <div className='col-md-6 col-12'>
               <figure>
                   <img src={Imageroll.src} alt="Cleaning" />
@@ -326,6 +380,10 @@ const Home = ({ products }) => {
             // Responsive breakpoints
             breakpoints={{
               0: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              575: {
                 slidesPerView: 2,
                 spaceBetween: 10,
               },
@@ -401,31 +459,7 @@ const Home = ({ products }) => {
 
 
 
-      <section className="bk-home-content-section position-relative">
-        <div className="description-bk">
-         <div className="row position-relative">
-          <div className="col-md-8">
-             <div ref={textRef2} className="text-bk">
-                <svg className="bubble-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.519 989.7">                         <path id="bubble-01" d="M727.546,58.656c310.955,0,449.911,393.087,420.51,513.555s-406.925,561.318-765.145,461.58S-18.559,637.168-.059,417.165,416.591,58.656,727.546,58.656Z" transform="translate(3.614 -58.656)" fill="#fff"></path>                     </svg>
-                <div className="wrap">
-                  <h2>Eco-power in every drop.</h2>
-                  <h5> At NZ Cleaning Supplies, we don't just aim to meet expectations—we aim to exceed them. </h5>
-                  {/* <p>Every product we create or distribute reflects our commitment to a cleaner planet. From biodegradable chemicals to energy-efficient equipment, we lead the charge in eco-friendly innovation. We understand that no two businesses are the same. That's why we offer tailored products and services that fit seamlessly into your operations, boosting efficiency and results. </p> */}
-                  <Link className="btn-1 green" href="/about">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
-                </div>
-             </div>
-          </div>
-          <div className="col-md-4">
-           <figure>
-             <img ref={sideimgRef2} src={cleanerImage.src}/>
-           </figure>
-          </div>
-          </div>
-        </div>
-        <img className="icon-leaf-float icon-leaf-3" src={iconImage.src} alt="Leaf Icon" />
-        <img className="icon-leaf-float icon-leaf-4" src={iconImage.src} alt="Leaf Icon" />
-        <img className="icon-leaf-float icon-leaf-5" src={iconImage.src} alt="Leaf Icon" />
-      </section>
+      
 
 
 
