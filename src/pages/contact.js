@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import iconImage from '../assets/images/icon.png';
+import iconImage from '../assets/images/leaf-icon.png';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';

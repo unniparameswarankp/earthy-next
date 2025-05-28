@@ -1572,8 +1572,8 @@ z-index: 5;
 .bk-product-listing-banner{
   .icon-bg{
     position: absolute;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     opacity: .5;
     &.icon-1{
       top: 20%;

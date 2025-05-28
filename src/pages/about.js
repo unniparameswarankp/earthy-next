@@ -5,7 +5,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import iconImage from '../assets/images/icon.png';
+import iconImage from '../assets/images/leaf-icon.png';
 import cleanerImage from '../assets/images/cleaner.jpg';
 import cleaningImage from '../assets/images/cleaning.jpg'; 
 

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { client } from '@/lib/sanity';
 import { urlFor } from '@/lib/image';
-import iconImage from '../assets/images/icon.png'; 
+import iconImage from '../assets/images/leaf-icon.png'; 
 
 export async function getServerSideProps() {
   const query = `*[_type == "post"] | order(publishedAt desc)[0...10]{
