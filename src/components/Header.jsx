@@ -63,7 +63,7 @@ const Header = () => {
                 <li><Link className={router.pathname === '/category/rolls' ? 'active' : ''} href="/category/rolls">Rolls</Link></li>
                 <li><Link className={router.pathname === '/category/urinal-screens' ? 'active' : ''} href="/category/urinal-screens">Urinal Screen</Link></li>
               </ul>
-              )}
+              )} 
               </li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/contact">Contact</Link></li>
@@ -78,6 +78,10 @@ const Header = () => {
       )}
     <header className={`bk-header position-relative  ${atTop ? '' : 'add-bg'} ${isOpen ? 'menu-opened' : ''}`}>
     <div className="container">
+    <Link className="logo-bk" href="/">
+       <img src={logoImage.src} alt="Banner" />
+      </Link>
+
       <div className="left-bk">
         {/* <button className='menu-btn' onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           <img src={iconImage.src} alt="" />
@@ -87,11 +91,7 @@ const Header = () => {
         </button> */}
 
    
-        <button className='hamburger' onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        
 
         <nav>
           <ul>
@@ -111,9 +111,7 @@ const Header = () => {
         </nav>
 
       </div>
-      <Link className="logo-bk" href="/">
-       <img src={logoImage.src} alt="Banner" />
-      </Link>
+      
       <div className="right-bk">
         {/* <a className="profile-link" href="#">
           <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" >
@@ -141,6 +139,11 @@ const Header = () => {
           </ul>
         </nav>
         <Link className="shop-link d-md-none d-inline-flex" href="/shop">Shop</Link>
+        <button className='hamburger' onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
