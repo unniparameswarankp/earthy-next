@@ -60,7 +60,7 @@ const Header = () => {
                 <li><Link className={router.pathname === '/category/chemical' ? 'active' : ''} href="/category/chemical">Chemical</Link></li>
                 <li><Link className={router.pathname === '/category/compostable-bags' ? 'active' : ''} href="/category/compostable-bags">Compostable Bags</Link></li>
                 <li><Link className={router.pathname === '/category/heavy-duty-wipes' ? 'active' : ''} href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
-                <li><Link className={router.pathname === '/category/rolls' ? 'active' : ''} href="/category/rolls">Rolls</Link></li>
+                <li><Link className={router.pathname === '/category/toilet-rolls' ? 'active' : ''} href="/category/topilet-rolls">Toilet Rolls</Link></li>
                 <li><Link className={router.pathname === '/category/urinal-screens' ? 'active' : ''} href="/category/urinal-screens">Urinal Screen</Link></li>
               </ul>
               )} 
@@ -102,7 +102,7 @@ const Header = () => {
               <li><Link className={router.pathname === '/category/chemical' ? 'active' : ''} href="/category/chemical">Chemical</Link></li>
               <li><Link className={router.pathname === '/category/compostable-bags' ? 'active' : ''} href="/category/compostable-bags">Compostable Bags</Link></li>
               <li><Link className={router.pathname === '/category/heavy-duty-wipes' ? 'active' : ''} href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
-              <li><Link className={router.pathname === '/category/rolls' ? 'active' : ''} href="/category/rolls">Rolls</Link></li>
+              <li><Link className={router.pathname === '/category/toilet-rolls' ? 'active' : ''} href="/category/toilet-rolls">Toilet Rolls</Link></li>
               <li><Link className={router.pathname === '/category/urinal-screens' ? 'active' : ''} href="/category/urinal-screens">Urinal Screen</Link></li>
             </ul>
             </li>

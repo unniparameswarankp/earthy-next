@@ -107,7 +107,7 @@ const Footer = () => {
               <li><Link href="/category/chemical">Chemical</Link></li>
               <li><Link href="/category/compostable-bags">Compostable Bags</Link></li>
               <li><Link href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
-              <li><Link href="/category/rolls">Rolls</Link></li>
+              <li><Link href="/category/toilet-rolls">Toilet Rolls</Link></li>
               <li><Link href="/category/urinal-screens">Urinal Screen</Link></li>
             </ul>
           </div>
