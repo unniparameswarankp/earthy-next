@@ -15,7 +15,6 @@ import Image70 from '../assets/images/updated.png';
 import Imageroll from '../assets/images/toyletroll.jpeg'; 
 import { client } from '@/lib/sanity' // or '../lib/sanity' if not using aliases
 import { urlFor } from '@/lib/image' 
-import bottleImage from '../assets/images/bottle.jpg'; 
 
 
 
@@ -327,7 +326,7 @@ const Home = ({ products }) => {
           <div className='row justify-content-center align-items-center'>
             <div className='col-md-5 col-12'>
               <figure>
-                <img src={bottleImage.src}/>
+                <img src="/bottles-recycled.jpg"/>
               </figure>
             </div>
             <div className='col-md-7 col-12'>
