@@ -15,6 +15,7 @@ import Image70 from '../assets/images/updated.png';
 import Imageroll from '../assets/images/toyletroll.jpeg'; 
 import { client } from '@/lib/sanity' // or '../lib/sanity' if not using aliases
 import { urlFor } from '@/lib/image' 
+import EarthySection from '../components/EarthySection'; // Adjust the import path as needed
 
 
 
@@ -458,12 +459,7 @@ const Home = ({ products }) => {
         </div>
       </section>
 
-
-
-
-
-
-      
+      <EarthySection />
 
 
 
