@@ -301,7 +301,7 @@ const Home = ({ products }) => {
                   <h2>Eco-power in every drop.</h2>
                   <h5> At NZ Cleaning Supplies, we don't just aim to meet expectations—we aim to exceed them. </h5>
                   {/* <p>Every product we create or distribute reflects our commitment to a cleaner planet. From biodegradable chemicals to energy-efficient equipment, we lead the charge in eco-friendly innovation. We understand that no two businesses are the same. That's why we offer tailored products and services that fit seamlessly into your operations, boosting efficiency and results. </p> */}
-                  <Link className="btn-1 green" href="/about">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
+                  <Link className="btn-1 green" href="/about-us">About Us<svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025"><g transform="translate(-56.271 1.23)"><path d="M-16580-9976a12.318,12.318,0,0,0,2.834,4.833,19.363,19.363,0,0,0,5.449,3.451,18.406,18.406,0,0,0-5.449,3.383,12.344,12.344,0,0,0-2.834,4.9" transform="translate(16637.5 9976)" fill="none" stroke="#3a5322" stroke-linecap="round" stroke-width="2"></path></g></svg></Link>
                 </div>
              </div>
           </div>

@@ -52,7 +52,7 @@ const Header = () => {
             <div className='container'>
              <ul className='menu-bk'>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About Us</Link></li>
+              <li><Link href="/about-us">About Us</Link></li>
               <li><Link href="/shop">Shop</Link>
               <button onClick={toggleList}><svg fill="#ffffff" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"/></svg></button>
               {isListOpen && (
@@ -96,7 +96,7 @@ const Header = () => {
         <nav>
           <ul>
             <li><Link className={router.pathname === '/' ? 'active' : ''} href="/">Home</Link></li>
-            <li><Link className={router.pathname === '/about' ? 'active' : ''} href="/about">About</Link></li>
+            <li><Link className={router.pathname === '/about-us' ? 'active' : ''} href="/about-us">About Us</Link></li>
             <li><Link className={router.pathname === '/shop' ? 'active' : ''} href="/shop">Products</Link>
             <ul className='sub-menu'>
               <li><Link className={router.pathname === '/category/chemical' ? 'active' : ''} href="/category/chemical">Chemical</Link></li>
