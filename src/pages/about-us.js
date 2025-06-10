@@ -114,13 +114,59 @@ const imageRef4 = useRef(null);
             </div>
             <div className="col-md-5 col-12">
               <div className='text-bk'>
-              <h2>Our Mission</h2>
-              <p>
+              <h2>Our Values</h2>
+              <p> At NZ Cleaning Supplies, we're not just selling cleaning products—we're creating a cleaner, healthier, and more sustainable future for New Zealand businesses. Whether you're a small business or a nationwide enterprise, we're here to empower you with the tools and expertise you need to succeed. </p>
+              <Link className="btn-1 green" href="/shop">
+                Explore Our Products
+              </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <section className="bk-about-content">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-7 col-12">
+              <figure ref={imageRef3}>
+                <img src={cleanerImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
+              </figure>
+            </div>
+            <div className="col-md-5 col-12">
+               <div className='text-bk'>
+               <h2>Our Mission</h2>
+            <p>
                 At Earthy Environmental Solutions, we believe in sustainable cleaning. Our products are crafted to clean effectively while being safe for the environment. With years of research and a passion for eco-conscious living, we aim to revolutionize how people think about cleaning.
               </p>
               <p>
                 We’re proud of our roots and dedicated to making a difference in every home and community we touch.
-              </p>
+              </p> </div>
+              <Link className="btn-1 green" href="/shop">
+                Explore Our Products
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+     
+
+
+     <section className="bk-about-content reverse-desktop">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-7 col-12">
+              <figure ref={imageRef4}>
+              <img src={cleaningImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
+              </figure>
+            </div>
+            <div className="col-md-5 col-12">
+              <div className='text-bk'>
+              <h2>Sustainability Journey</h2>
+              <p>At NZ Cleaning Supplies, sustainability isn't just a buzzword—it's at the core of everything we do. We believe in delivering high-performance cleaning solutions while protecting the planet for future generations. From eco-friendly products to energy-efficient equipment, we are committed to redefining the cleaning industry with sustainable practices. </p>
               <Link className="btn-1 green" href="/shop">
                 Explore Our Products
               </Link>
@@ -142,58 +188,12 @@ const imageRef4 = useRef(null);
      
 
 
-        {/* <section className="bk-about-content">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-7 col-12">
-              <figure ref={imageRef3}>
-                <img src={cleanerImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
-              </figure>
-            </div>
-            <div className="col-md-5 col-12">
-               <div className='text-bk'>
-              <h2>Our Journey</h2>
-              <p>Founded in 1954, NZ Cleaning Supplies began with a vision: to transform how New Zealanders approached cleaning and hygiene. What started as a small operation quickly gained a reputation for quality, reliability, and innovation.</p>
-              <p>Today, we're proud to be at the forefront of the industry, offering solutions that combine performance with environmental responsibility. Over the decades, we've grown, adapted, and evolved, but our core mission remains the same: to empower businesses with cleaning solutions that are effective, efficient, and sustainable. </p>
-              </div>
-              <Link className="btn-1 green" href="/shop">
-                Explore Our Products
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
 
 
      
 
 
-     {/* <section className="bk-about-content reverse-desktop">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-7 col-12">
-              <figure ref={imageRef4}>
-              <img src={cleanerImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
-              </figure>
-            </div>
-            <div className="col-md-5 col-12">
-              <div className='text-bk'>
-              <h2>Our Mission</h2>
-              <p>
-                At Earthy Environmental Solutions, we believe in sustainable cleaning. Our products are crafted to clean effectively while being safe for the environment. With years of research and a passion for eco-conscious living, we aim to revolutionize how people think about cleaning.
-              </p>
-              <p>
-                We’re proud of our roots and dedicated to making a difference in every home and community we touch.
-              </p>
-              <Link className="btn-1 green" href="/shop">
-                Explore Our Products
-              </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
 
 
