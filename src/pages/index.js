@@ -7,13 +7,9 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import bannerImage from '../assets/images/banner.jpg'; 
 import iconImage from '../assets/images/leaf-icon.png'; 
 import cleaningImage from '../assets/images/cleaning.jpg'; 
 import cleanerImage from '../assets/images/cleaner.jpg'; 
-import cleaningProductImage from '../assets/images/cleaning-products.png'; 
-import ProductImage from '../assets/images/product.png';
-import KiwyImage from '../assets/images/kiwy.png'; 
 import HomeImage from '../assets/images/earthy-home.jpg'; 
 import Image70 from '../assets/images/updated.png'; 
 import Imageroll from '../assets/images/toyletroll.jpeg'; 
@@ -315,7 +311,7 @@ const Home = ({ products }) => {
           <div className='row justify-content-center align-items-center flex-direction-md-reverce'>
             <div className='col-md-5 col-12'>
               <figure>
-                <img  src={cleanerImage.src}/>
+                <img  src="/echo-drop.jpg"/>
               </figure>
             </div>
             <div className='col-md-7 col-12 pl-md-5per'>
