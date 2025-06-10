@@ -62,6 +62,7 @@ const Header = () => {
                 <li><Link className={router.pathname === '/category/heavy-duty-wipes' ? 'active' : ''} href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
                 <li><Link className={router.pathname === '/category/toilet-rolls' ? 'active' : ''} href="/category/topilet-rolls">Toilet Rolls</Link></li>
                 <li><Link className={router.pathname === '/category/urinal-screens' ? 'active' : ''} href="/category/urinal-screens">Urinal Screen</Link></li>
+                <li><Link className={router.pathname === '/category/accessories' ? 'active' : ''} href="/category/accessories">Accessories</Link></li>
               </ul>
               )} 
               </li>
@@ -104,6 +105,7 @@ const Header = () => {
               <li><Link className={router.pathname === '/category/heavy-duty-wipes' ? 'active' : ''} href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
               <li><Link className={router.pathname === '/category/toilet-rolls' ? 'active' : ''} href="/category/toilet-rolls">Toilet Rolls</Link></li>
               <li><Link className={router.pathname === '/category/urinal-screens' ? 'active' : ''} href="/category/urinal-screens">Urinal Screen</Link></li>
+              <li><Link className={router.pathname === '/category/accessories' ? 'active' : ''} href="/category/accessories">Accessories</Link></li>
             </ul>
             </li>
             <li><Link className={router.pathname === '/blogs' ? 'active' : ''} href="/blogs">Blogs</Link></li>
