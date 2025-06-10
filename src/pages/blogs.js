@@ -74,7 +74,7 @@ export default function Blog({ blogs }) {
           <div key={blog._id} className="col-lg-4 col-md-6 col-12 pb-50">
             <div className="blog-card">
               {blog.mainImage && (
-                <img src={urlFor(blog.mainImage).width(400).url()} alt={blog.title} />
+                <img src={urlFor(blog.mainImage).width(1200).url()} alt={blog.title} />
               )}
               <h3>{blog.title}</h3>
               <p>{getExcerpt(blog.body)}</p>
