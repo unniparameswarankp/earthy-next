@@ -234,10 +234,6 @@ const Home = ({ products }) => {
               1200: {
                 slidesPerView: 5,
                 spaceBetween: 30,
-              },
-              1300: {
-                slidesPerView: 6,
-                spaceBetween: 30,
               }
             }}
           >
@@ -246,7 +242,7 @@ const Home = ({ products }) => {
             {products.map((product, index) => (
  <SwiperSlide key={product._id}>
 
-              <div  className="bk-product-listing">
+              <div  className="bk-product-listing text-center">
            
                      <figure>
                         {product.image && (
