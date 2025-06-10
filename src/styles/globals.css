@@ -562,7 +562,7 @@ a{
   justify-content: space-between;
 }
 .logo-bk{
-  width: 180px;
+  width: 250px;
   height: auto;
   display: block;
       transition: .4s;
@@ -637,7 +637,7 @@ nav{
       background-color: #ffffff;
       min-height: 100px;
       .logo-bk{
-          width: 140px;
+          width: 220px;
       }
       .profile-link{
           svg{
@@ -1406,7 +1406,12 @@ z-index: 5;
       max-height: 120px;
       min-height: 120px;
       .logo-bk {
-        width: 160px;
+        width: 180px;
+      }
+    }
+    .bk-header.add-bg:not(.menu-opened) {
+      .logo-bk {
+        width: 180px;
       }
     }
     .bk-header.add-bg{
