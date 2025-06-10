@@ -2569,3 +2569,6 @@ display: none;
     padding-top: 100px;
   }
 }
+.bk-header .left-bk ul li a{
+  font-weight: 600;
+}
