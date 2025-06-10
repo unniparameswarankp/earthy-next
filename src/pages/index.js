@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import iconImage from '../assets/images/leaf-icon.png'; 
-import cleaningImage from '../assets/images/cleaning.jpg'; 
 import cleanerImage from '../assets/images/cleaner.jpg'; 
 import HomeImage from '../assets/images/earthy-home.jpg'; 
 import Image70 from '../assets/images/updated.png'; 
@@ -406,6 +405,10 @@ const Home = ({ products }) => {
               1025: {
                 slidesPerView: 4,
                 spaceBetween: 10,
+              },
+              1300: {
+                slidesPerView: 5,
+                spaceBetween: 10,
               }
             }}
           >
@@ -413,46 +416,91 @@ const Home = ({ products }) => {
             <SwiperSlide>
               <div className='item-bk'>
                 <figure>
-                  <img src={cleaningImage.src} />
+                  <img src="/home.jpg" />
                 </figure>
-                <span>Products</span>
-                <h2>Chemical</h2>
+                {/* <span>Products</span> */}
+                <h3>Home Care</h3>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className='item-bk'>
                 <figure>
-                  <img src={cleaningImage.src} />
+                  <img src="/bathroom.jpg" />
                 </figure>
-                <span>Products</span>
-                <h2>Compostable Bags</h2>
+                {/* <span>Products</span> */}
+                <h3>Toilet & Bathroom</h3>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className='item-bk'>
                 <figure>
-                  <img src={cleaningImage.src} />
+                  <img src="/outdoor.jpg" />
                 </figure>
-                <span>Products</span>
-                <h2>Heavy Duty Wipes</h2>
+                {/* <span>Products</span> */}
+                <h3>Outdoor & Garden</h3>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className='item-bk'>
                 <figure>
-                  <img src={cleaningImage.src} />
+                  <img src="/industrial.jpg" />
                 </figure>
-                <span>Products</span>
-                <h2>Rolls</h2>
+                {/* <span>Products</span> */}
+                <h3>Industrial</h3>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className='item-bk'>
                 <figure>
-                  <img src={cleaningImage.src} />
+                  <img src="/cleaning.png" />
                 </figure>
-                <span>Products</span>
-                <h2>Urinal Screen</h2>
+                {/* <span>Products</span> */}
+                <h3>Surface Cleaning</h3>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src="/home.jpg" />
+                </figure>
+                {/* <span>Products</span> */}
+                <h3>Home Care</h3>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src="/bathroom.jpg" />
+                </figure>
+                {/* <span>Products</span> */}
+                <h3>Toilet & Bathroom</h3>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src="/outdoor.jpg" />
+                </figure>
+                {/* <span>Products</span> */}
+                <h3>Outdoor & Garden</h3>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src="/industrial.jpg" />
+                </figure>
+                {/* <span>Products</span> */}
+                <h3>Industrial</h3>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='item-bk'>
+                <figure>
+                  <img src="/cleaning.png" />
+                </figure>
+                {/* <span>Products</span> */}
+                <h3>Surface Cleaning</h3>
               </div>
             </SwiperSlide>
             
