@@ -374,6 +374,9 @@ const Home = ({ products }) => {
 
 
       <section className='bk-home-our-range'>
+        <div className='container text-center'>
+          <h2>Explore the range</h2>
+        </div>
         <div className='left-container'>
           <div className='inner-bk'>
           <Swiper

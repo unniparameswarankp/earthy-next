@@ -2801,3 +2801,12 @@ position: absolute;
   text-align: center;
  }
 }
+.bk-home-our-range{
+h2{
+  font-size: 2.5rem;
+    line-height: 1;
+    font-family: 'Bainsley';
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+}
