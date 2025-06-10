@@ -2577,6 +2577,7 @@ display: none;
   gap: 0 50px;
   left: 50%;
   transform: translateX(-50%);
+  border: 2px solid #3b863e;
   &:after{
     display: block;
     height: calc(100% - 60px);
@@ -2597,6 +2598,7 @@ display: none;
     height: 2rem;
     width: 2rem;
     transform: rotate(45deg);
-    background-color: #fcfff4;
+    background-color: #3b863e;
+    display: none;
   }
 }
