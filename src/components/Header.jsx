@@ -65,7 +65,7 @@ const Header = () => {
               </ul>
               )} 
               </li>
-              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/blogs">Blogs</Link></li>
               <li><Link href="/contact">Contact</Link></li>
              </ul>
              <div className='bottom-bk'>
@@ -106,7 +106,7 @@ const Header = () => {
               <li><Link className={router.pathname === '/category/urinal-screens' ? 'active' : ''} href="/category/urinal-screens">Urinal Screen</Link></li>
             </ul>
             </li>
-            <li><Link className={router.pathname === '/blog' ? 'active' : ''} href="/blog">Blog</Link></li>
+            <li><Link className={router.pathname === '/blogs' ? 'active' : ''} href="/blogs">Blogs</Link></li>
           </ul>
         </nav>
 

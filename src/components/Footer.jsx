@@ -27,7 +27,7 @@ const Footer = () => {
             <ul className='menu'>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about-us">About Us</Link></li>
-              <li><Link href="/blog">Blogs</Link></li>
+              <li><Link href="/blogs">Blogs</Link></li>
               <li><Link href="/contact">Contact Us</Link></li>
             </ul>
             <div className="title-bk">Follow Us</div>
