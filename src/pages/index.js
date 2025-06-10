@@ -318,7 +318,7 @@ const Home = ({ products }) => {
                 <img  src={cleanerImage.src}/>
               </figure>
             </div>
-            <div className='col-md-7 col-12'>
+            <div className='col-md-7 col-12 pl-md-5per'>
               <h2>Eco-power in every drop.</h2>
               <p>At Earthy, we believe that real cleaning power doesn't have to come from harsh chemicals. Our plant-based formulas are concentrated with natural, biodegradable ingredients that pack a serious punch — all while being safe for your home and gentle on the planet. Every drop is crafted to cut through dirt, grease, and germs without leaving behind toxins or waste. It's proof that sustainable cleaning can be powerful, effective, and beautifully simple.</p>
             </div>

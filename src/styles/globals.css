@@ -2622,3 +2622,8 @@ display: none;
 .pt-50{
   padding-top: 50px;
 }
+@media (min-width: 768px) {
+.pl-md-5per{
+  padding-left: 5%;
+}
+}
