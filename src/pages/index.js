@@ -190,7 +190,15 @@ const Home = ({ products }) => {
       <div className="home-video">
         <div className="container">
           <div className="embed-responsive embed-responsive-16by9">
-            <iframe src="https://player.vimeo.com/video/656958665?h=ad6920d100" className="_iub_cs_activate _iub_cs_activate-activated" data-iub-purposes="1" data-cmp-ab="2" data-cmp-info="8" async="false"></iframe>
+           
+            <video
+          className="video-middle-banner"
+          src="/cleaning-video.mp4"
+        
+       
+          playsInline
+          controls
+        ></video>
           </div>
         </div>
       </div>
