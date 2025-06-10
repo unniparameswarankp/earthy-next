@@ -42,7 +42,7 @@ export default function EarthySection() {
       </div>
       <div
         className="bg-map"
-        data-depth=".5"
+        data-depth=".8"
         ref={(el) => (elementsRef.current[0] = el)}
       >
         <img src="/world-map.svg" alt="Map" />
@@ -52,7 +52,7 @@ export default function EarthySection() {
         src="/earth.png"
         alt="Earth"
         className="earth-image"
-        data-depth="1"
+        data-depth="1.2"
         ref={(el) => (elementsRef.current[1] = el)}
       />
 
@@ -74,7 +74,7 @@ export default function EarthySection() {
             <div
               className="benefit"
               key={i}
-              data-depth=".5"
+              data-depth=".2"
               ref={(el) => (elementsRef.current[i + 3] = el)}
             >
               <div className="icon">
