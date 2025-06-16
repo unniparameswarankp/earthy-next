@@ -255,12 +255,9 @@ const Home = ({ products }) => {
                      
                      <div className="name">{product.title}</div>
                      <div className="category">
-  {product.price != null
-    ? new Intl.NumberFormat('en-NZ', {
-        style: 'currency',
-        currency: 'NZD',
-      }).format(product.price)
-    : 'Price is not available'}
+{product.categories?.map((cat) => (
+        <span key={cat._id} className="category-name">{cat.title}</span>
+      ))}
 </div>
 <Link href={`/product/${product.slug.current}`} className="btn-1 green" tabIndex={0}>
   View Product

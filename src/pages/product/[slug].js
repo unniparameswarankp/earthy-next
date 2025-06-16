@@ -32,12 +32,14 @@ export async function getServerSideProps(context) {
       slug,
       price,
       image,
+      shortDescription,
       pdfFile{
         asset->{
           url
         }
       }
     }`,
+
     { category: product.category, slug }
   );
 
@@ -294,8 +296,7 @@ export default function ProductDetails({ product, relatedProducts }) {
             }}
           >
                     {relatedProducts.map((prod) => {
-                      const isSelected = selectedProducts.some(p => p.title === prod.title);
-                      const qty = getProductQuantity(prod.title);
+   
                       return (
                           <SwiperSlide key={prod._id}>
               <div className="bk-product-listing">
@@ -309,14 +310,11 @@ export default function ProductDetails({ product, relatedProducts }) {
                   </div>
                   <div className="col-12 col-md-7">
                     <div className="name">{prod.title}</div>
-                    <div className="category">
-                      {prod.price != null
-                        ? new Intl.NumberFormat('en-NZ', {
-                            style: 'currency',
-                            currency: 'NZD',
-                          }).format(prod.price)
-                        : 'Price is not available'}
-                    </div>
+                                       {prod.shortDescription && (
+  <p className="short-description">
+    {prod.shortDescription}
+  </p>
+)}
                     <Link href={`/product/${prod.slug.current}`} className="btn-1 green">
                       View Product
                     </Link>

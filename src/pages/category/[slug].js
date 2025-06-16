@@ -72,9 +72,9 @@ export default function CategoryPage({ category, currentPage, totalPages }) {
                   <div className="col-12 col-md-7">
                     <div className="category"></div>
                     <div className="name">{post.title}</div>
-                    <div className="category">
-{post.shortDescription}
-                    </div>
+                      <p className="short-description">
+                     {post.shortDescription}
+                    </p>
                     <Link href={`/product/${post.slug.current}`} className="btn-1 green" tabIndex="0">
                       View Product
                       <svg xmlns="http://www.w3.org/2000/svg" width="12.215" height="19.025" viewBox="0 0 12.215 19.025">
@@ -123,6 +123,7 @@ export async function getServerSideProps(context) {
         title,
         slug,
         price,
+        shortDescription,
         image
       }
     }
