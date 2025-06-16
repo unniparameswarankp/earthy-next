@@ -232,6 +232,18 @@
     font-display: swap;
 }
 @font-face {
+    font-family: 'ProximaNova';
+    src: url('../assets/fonts/ProximaNova-Medium.eot');
+    src: url('../assets/fonts/ProximaNova-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/ProximaNova-Medium.woff2') format('woff2'),
+        url('../assets/fonts/ProximaNova-Medium.woff') format('woff'),
+        url('../assets/fonts/ProximaNova-Medium.ttf') format('truetype'),
+        url('../assets/fonts/ProximaNova-Medium.svg#ProximaNova-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
     font-family: 'Proxima Nova Bl';
     src: url('../assets/fonts/ProximaNova-Black.eot');
     src: url('../assets/fonts/ProximaNova-Black.eot?#iefix') format('embedded-opentype'),
@@ -2570,7 +2582,8 @@ display: none;
   }
 }
 .bk-header .left-bk ul li a{
-  font-weight: 600;
+  font-weight: 500;
+  font-family: 'ProximaNova';
 }
 .bk-header nav .sub-menu {
   grid-template-columns: 1fr 1fr;
