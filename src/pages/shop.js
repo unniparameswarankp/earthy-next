@@ -9,18 +9,20 @@ export async function getServerSideProps(context) {
   const page = parseInt(context.query.page || '1');
   const start = (page - 1) * PRODUCTS_PER_PAGE;
 
-  const productsQuery = `*[_type == "product"] | order(_createdAt desc){
+const productsQuery = `*[_type == "product"] | order(_createdAt desc){
+  _id,
+  title,
+  slug,
+  price,
+  shortDescription, // 👈 add this
+  "categories": categories[]->{
     _id,
     title,
-    slug,
-    price,
-    "categories": categories[]->{
-      _id,
-      title,
-      slug
-    },
-    image
-  }`;
+    slug
+  },
+  image
+}`;
+
 
   const totalCountQuery = `count(*[_type == "product"])`;
   const categoriesQuery = `*[_type == "category"]{
@@ -118,14 +120,11 @@ const Shop = ({ products, categories, totalPages, currentPage }) => {
                   </div>
                   <div className="col-12 col-md-7">
                     <div className="name">{prod.title}</div>
-                    <div className="category">
-                      {prod.price != null
-                        ? new Intl.NumberFormat('en-NZ', {
-                            style: 'currency',
-                            currency: 'NZD',
-                          }).format(prod.price)
-                        : 'Price is not available'}
-                    </div>
+                   {prod.shortDescription && (
+  <p className="short-description">
+    {prod.shortDescription}
+  </p>
+)}
                     <Link href={`/product/${prod.slug.current}`} className="btn-1 green">
                       View Product
                     </Link>

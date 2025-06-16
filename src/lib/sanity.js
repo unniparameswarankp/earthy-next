@@ -26,7 +26,7 @@ export async function getCategoryBySlug(slug) {
     `*[_type == "category" && slug.current == $slug][0]{
       title,
       description,
-      "posts": *[_type == "product" && references(^._id)]{ title, slug, image, price },
+      "posts": *[_type == "product" && references(^._id)]{ title, slug, image, price , shortDescription},
       "allCategories": *[_type == "category"]{
         title,
         "slug": slug.current

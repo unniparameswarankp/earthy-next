@@ -73,12 +73,7 @@ export default function CategoryPage({ category, currentPage, totalPages }) {
                     <div className="category"></div>
                     <div className="name">{post.title}</div>
                     <div className="category">
-                      {typeof post.price === 'number'
-                        ? new Intl.NumberFormat('en-NZ', {
-                            style: 'currency',
-                            currency: 'NZD',
-                          }).format(post.price)
-                        : 'Price not available'}
+{post.shortDescription}
                     </div>
                     <Link href={`/product/${post.slug.current}`} className="btn-1 green" tabIndex="0">
                       View Product

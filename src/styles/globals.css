@@ -1150,14 +1150,18 @@ p{
       margin-bottom: 1.5rem;
   }
   .name{
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       line-height: 1;
       font-family: 'Bainsley';
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      color: #0b572c;
       @media (max-width: 767px) {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
+  }
+  p{
+    line-height: 1.4;
   }
   .row{
       align-items: center;
