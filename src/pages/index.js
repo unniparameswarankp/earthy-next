@@ -349,14 +349,53 @@ const Home = ({ products }) => {
       <section className='bk-home-product-highlight'>
         <div className='container'>
           <div className='row align-items-center flex-direction-md-reverce'>
-            <div className='col-md-6 col-12'>
-              <figure>
-                  <img src={Imageroll.src} alt="Cleaning" />
-              </figure>
+            <div className='col-md-6 col-12 figure-holder'>
+              <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+
+            // Responsive breakpoints
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              }
+            }}
+          >
+             <SwiperSlide>
+                <figure>
+                    <img src="/400-sheet-carton.png" alt="Cleaning" />
+                </figure>
+             </SwiperSlide>
+             <SwiperSlide>
+                <figure>
+                    <img src="/400-sheet-combo.png" alt="Cleaning" />
+                </figure>
+             </SwiperSlide>
+             <SwiperSlide>
+                <figure>
+                    <img src="/400-sheet-front-view.png" alt="Cleaning" />
+                </figure>
+             </SwiperSlide>
+             <SwiperSlide>
+                <figure>
+                    <img src="/400-sheet-open-rolll.png" alt="Cleaning" />
+                </figure>
+             </SwiperSlide>
+             <SwiperSlide>
+                <figure>
+                    <img src="/400-sheet-unwraped-front-view.png" alt="Cleaning" />
+                </figure>
+             </SwiperSlide>
+
+
+            </Swiper>
+
             </div>
             <div className='col-md-6 col-12'>
               <div className='text-bk'>
-              <div className='price'>Price is not available</div>
+              {/* <div className='price'>Price is not available</div> */}
               <div className='title'>400 Sheets 2 PLY Toilet Roll</div>
               <div className='description'>
                 <p>Earthy Toilet Tissue is a high-performance toilet paper designed for superior quality and comfort. Each roll is individually wrapped for added hygiene. This affordable 2-ply tissue offers excellent absorbency, while being both soft and durable.</p>
