@@ -130,7 +130,7 @@ export default function Contact() {
 
         <div className="container">
           <div className="row mt-50">
-            <div className="col-md-4 col-12 mt-50">
+            <div className="col-lg-4 col-12 mt-50">
               <div className="green-box">
                 <h3 className="text-center color-primary">Auckland Office</h3>
                 <ul>
@@ -142,7 +142,7 @@ export default function Contact() {
                 </ul>
               </div>
             </div>
-            <div className="col-md-4 col-12 mt-50">
+            <div className="col-lg-4 col-12 mt-50">
               <div className="green-box">
                 <h3 className="text-center color-primary">Wellington Office</h3>
                 <ul>
@@ -154,7 +154,7 @@ export default function Contact() {
                 </ul>
               </div>
             </div>
-            <div className="col-md-4 col-12 mt-50">
+            <div className="col-lg-4 col-12 mt-50">
               <div className="green-box">
                 <h3 className="text-center color-primary">Christchurch Office</h3>
                 <ul>

@@ -141,7 +141,7 @@ const Header = () => {
             <li><Link className="shop-link" href="/contact">Contact</Link></li>
           </ul>
         </nav>
-        <Link className="shop-link d-md-none d-inline-flex" href="/shop">Shop</Link>
+        <Link className="shop-link d-lg-none d-inline-flex" href="/shop">Shop</Link>
         <button className='hamburger' onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           <span></span>
           <span></span>

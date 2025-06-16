@@ -465,6 +465,9 @@ p{
       flex: 0 0 33.33333333%;
       max-width: 33.33333333%;
   }
+  .d-lg-none{
+    display: none!important;
+  }
 }
 .position-relative{
   position: relative;
@@ -675,7 +678,6 @@ nav{
   position: relative;
   width: 100%;
   height: auto;
-  
   color: #000000;
   z-index: 5;
   @media (min-width: 768px) {
@@ -683,7 +685,11 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 800px;
   }
+   @media (min-width: 992px) {
+    min-height: 600px;
+   }
 figure, video{
   position: relative;
   width: 200%;
@@ -1334,7 +1340,7 @@ z-index: 5;
         .menu {
           li {
               a{
-                  font-size: 1.6rem;
+                  font-size: 1rem;
               }
           }
        }
@@ -2904,4 +2910,15 @@ h3{
   & .count-bk{
     margin-bottom: 1rem;
   }
+  }
+
+  @media (max-width: 991px) {
+    .bk-header {
+      nav{
+        display: none;
+      }
+    }
+    .hamburger {
+      display: flex!important;
+    }
   }
