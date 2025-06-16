@@ -14,6 +14,9 @@ import { PortableText } from '@portabletext/react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { Thumbs } from 'swiper/modules';
+import 'swiper/css/thumbs';
+
 
 const client = createClient({
   projectId: '9ixmdwm9',
@@ -60,6 +63,7 @@ export default function ProductDetails({ product, relatedProducts }) {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [mainProductQty, setMainProductQty] = useState(1);
+ const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const {
     register,
@@ -210,14 +214,52 @@ export default function ProductDetails({ product, relatedProducts }) {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6 col-12">
-            {product.image && (
-              <img
-                src={urlFor(product.image).width(1200).url()}
-                alt={product.title}
-                style={{ borderRadius: '10px' }}
-              />
-            )}
-          </div>
+  <Swiper
+    spaceBetween={10}
+    navigation
+    thumbs={{ swiper: thumbsSwiper }}
+    modules={[Navigation, Thumbs]}
+    className="mainSwiper"
+  >
+    {[product.image, ...(product.gallery || [])].map((img, idx) => (
+      <SwiperSlide key={idx}>
+        <img
+          src={urlFor(img).width(800).url()}
+          alt={`Image ${idx + 1}`}
+          style={{ borderRadius: '10px', width: '100%' }}
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
+  <div className="position-relative px-3">
+  <div className="swiper-nav-holder">
+<div className="thumbs-prev">←</div>
+<div className="thumbs-next">→</div>
+</div>
+  <Swiper
+     onSwiper={setThumbsSwiper}
+  spaceBetween={10}
+  slidesPerView={4}
+  watchSlidesProgress
+  navigation={{
+    nextEl: '.thumbs-next',
+    prevEl: '.thumbs-prev'
+  }}
+  modules={[Thumbs, Navigation]}
+  >
+    {[product.image, ...(product.gallery || [])].map((img, idx) => (
+      <SwiperSlide key={idx}>
+        <img
+          src={urlFor(img).width(200).url()}
+          alt={`Thumbnail ${idx + 1}`}
+          style={{ borderRadius: '8px', cursor: 'pointer' }}
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
+  </div>
+</div>
+
           <div className="col-md-6 col-12">
             <div className='text-bk'>
               {/* <div className='sub-title-bk'>Product</div> */}
@@ -250,33 +292,6 @@ export default function ProductDetails({ product, relatedProducts }) {
     📄 Download Safety Data Sheet
   </a>
 )}
-{product.gallery && product.gallery.length > 0 && (
-        <div className='gallery-bk'>
-          <h2 className='text-center'>Gallery</h2>
-          <Swiper
-            modules={[Navigation, Pagination]}
-            navigation
-            pagination={{ clickable: true }}
-            breakpoints={{
-              0: { slidesPerView: 1, spaceBetween: 20 },
-              769: { slidesPerView: 2, spaceBetween: 30 },
-              993: { slidesPerView: 3, spaceBetween: 30 }
-            }}
-          >
-            {product.gallery?.length > 0 && product.gallery.map((img, idx) => (
-              <SwiperSlide key={idx}>
-                <figure>
-                  <img
-                    src={urlFor(img).width(500).url()}
-                    alt={`Gallery image ${idx + 1}`}
-                    style={{ borderRadius: '10px' }}
-                  />
-                </figure>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-        )}
 
  </div>
   
