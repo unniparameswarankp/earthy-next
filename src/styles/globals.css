@@ -2690,13 +2690,14 @@ display: none;
 
 .earth-image {
   position: absolute;
-  top: calc( 50% + 75px );
+  top: calc( 50% + 145px );
   left: 50%;
   width: 500px;
   transform: translate(-50%, -50%);
   z-index: 2;
   @media (max-width: 1050px) {
    width: 300px;
+   top: calc( 50% + 120px );
   }
   @media (max-width: 900px) {
     top: calc( 100% - 200px );

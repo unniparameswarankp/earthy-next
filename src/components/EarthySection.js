@@ -1,6 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function EarthySection() {
   const sectionRef = useRef(null);
@@ -10,6 +13,23 @@ export default function EarthySection() {
     const section = sectionRef.current;
     const elements = elementsRef.current;
 
+    // 🌍 Earth scroll rotation
+    const earthEl = elements[1]; // Assuming earth is the second item
+    if (earthEl) {
+      gsap.to(earthEl, {
+        rotation: 360,
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        transformOrigin: "50% 50%",
+        ease: "none",
+      });
+    }
+
+    // 🐭 Mouse move parallax
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       const centerX = window.innerWidth / 2;
@@ -37,9 +57,8 @@ export default function EarthySection() {
 
   return (
     <section className="earthy-section" ref={sectionRef}>
-      <div className="container text-center">
-        
-      </div>
+      <div className="container text-center"></div>
+
       <div
         className="bg-map"
         data-depth=".8"
@@ -56,9 +75,7 @@ export default function EarthySection() {
         ref={(el) => (elementsRef.current[1] = el)}
       />
 
-      <div
-        className="text-container container"
-      >
+      <div className="text-container container">
         <h2>Earthy Project Benefits</h2>
         <p>
           We are committed to preserving our planet through sustainable practices and eco-friendly innovations.
@@ -78,7 +95,7 @@ export default function EarthySection() {
               ref={(el) => (elementsRef.current[i + 3] = el)}
             >
               <div className="icon">
-                   <img src={item.icon} alt={item.text} />
+                <img src={item.icon} alt={item.text} />
               </div>
               <p>{item.text}</p>
             </div>
