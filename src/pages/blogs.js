@@ -6,7 +6,7 @@ import { urlFor } from '@/lib/image';
 import iconImage from '../assets/images/leaf-icon.png'; 
 
 export async function getServerSideProps() {
-  const query = `*[_type == "post"] | order(publishedAt desc)[0...10]{
+const query = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...10]{
   _id,
   title,
   "slug": slug.current,

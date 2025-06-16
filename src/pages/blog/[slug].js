@@ -43,8 +43,8 @@ const BlogDetail = ({ post }) => {
         <Image
           src={post.mainImage.asset.url}
           alt={post.title}
-          width={800}
-          height={400}
+          width={1200}
+          height={600}
           className="featured-image"
         />
       )}
