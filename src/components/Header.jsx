@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link'; 
 import { useRouter } from 'next/router'; // ✅ Import useRouter
 import logoImage from '../assets/images/logo.png'; 
-import iconImage from '../assets/images/icon.png';
 import menuImage from '../assets/images/menu-bg.jpg'; 
 
 const Header = () => {
@@ -62,6 +61,7 @@ const Header = () => {
                 <li><Link className={router.pathname === '/category/heavy-duty-wipes' ? 'active' : ''} href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
                 <li><Link className={router.pathname === '/category/toilet-rolls' ? 'active' : ''} href="/category/topilet-rolls">Toilet Rolls</Link></li>
                 <li><Link className={router.pathname === '/category/urinal-screens' ? 'active' : ''} href="/category/urinal-screens">Urinal Screen</Link></li>
+                <li><Link className={router.pathname === '/category/hand-towel' ? 'active' : ''} href="/category/hand-towel">Hand Towel</Link></li>
                 <li><Link className={router.pathname === '/category/accessories' ? 'active' : ''} href="/category/accessories">Accessories</Link></li>
               </ul>
               )} 
@@ -105,6 +105,7 @@ const Header = () => {
               <li><Link className={router.pathname === '/category/heavy-duty-wipes' ? 'active' : ''} href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
               <li><Link className={router.pathname === '/category/toilet-rolls' ? 'active' : ''} href="/category/toilet-rolls">Toilet Rolls</Link></li>
               <li><Link className={router.pathname === '/category/urinal-screens' ? 'active' : ''} href="/category/urinal-screens">Urinal Screen</Link></li>
+              <li><Link className={router.pathname === '/category/hand-towel' ? 'active' : ''} href="/category/hand-towel">Hand Towel</Link></li>
               <li><Link className={router.pathname === '/category/accessories' ? 'active' : ''} href="/category/accessories">Accessories</Link></li>
             </ul>
             </li>

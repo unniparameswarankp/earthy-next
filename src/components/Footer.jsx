@@ -109,6 +109,7 @@ const Footer = () => {
               <li><Link href="/category/heavy-duty-wipes">Heavy Duty Wipes</Link></li>
               <li><Link href="/category/toilet-rolls">Toilet Rolls</Link></li>
               <li><Link href="/category/urinal-screens">Urinal Screen</Link></li>
+              <li><Link href="/category/hand-towel">Hand Towel</Link></li>
               <li><Link href="/category/accessories">Accessories</Link></li>
             </ul>
           </div>
