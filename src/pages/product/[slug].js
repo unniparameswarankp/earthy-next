@@ -214,49 +214,80 @@ export default function ProductDetails({ product, relatedProducts }) {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6 col-12">
-  <Swiper
-    spaceBetween={10}
-    navigation
-    thumbs={{ swiper: thumbsSwiper }}
-    modules={[Navigation, Thumbs]}
-    className="mainSwiper"
-  >
-    {[product.image, ...(product.gallery || [])].map((img, idx) => (
+<Swiper
+  spaceBetween={10}
+  navigation
+  thumbs={{ swiper: thumbsSwiper }}
+  modules={[Navigation, Thumbs]}
+  className="mainSwiper"
+>
+  {[product.image, ...(product.gallery || [])].map((img, idx) => {
+    let imageUrl = null;
+
+    // Case 1: Sanity image object
+    if (img && img.asset) {
+      imageUrl = urlFor(img).width(800).url();
+    }
+    // Case 2: Direct URL string (optional)
+    else if (typeof img === 'string') {
+      imageUrl = img;
+    }
+
+    return (
       <SwiperSlide key={idx}>
         <img
-          src={urlFor(img).width(800).url()}
+          src={imageUrl || '/icon.png'}
           alt={`Image ${idx + 1}`}
-          style={{ borderRadius: '10px', width: '100%' }}
+          style={{
+            borderRadius: '10px',
+            width: '100%',
+            opacity: imageUrl ? 1 : 0.5,
+          }}
         />
       </SwiperSlide>
-    ))}
-  </Swiper>
+    );
+  })}
+</Swiper>
+
+
+
+
   <div className="position-relative px-3">
   <div className="swiper-nav-holder">
 <div className="thumbs-prev">←</div>
 <div className="thumbs-next">→</div>
 </div>
-  <Swiper
-     onSwiper={setThumbsSwiper}
+<Swiper
+  onSwiper={setThumbsSwiper}
   spaceBetween={10}
   slidesPerView={4}
   watchSlidesProgress
   navigation={{
     nextEl: '.thumbs-next',
-    prevEl: '.thumbs-prev'
+    prevEl: '.thumbs-prev',
   }}
   modules={[Thumbs, Navigation]}
-  >
-    {[product.image, ...(product.gallery || [])].map((img, idx) => (
+>
+  {[product.image, ...(product.gallery || [])].map((img, idx) => {
+    const isValidImage = img && img.asset;
+    const imageUrl = isValidImage ? urlFor(img).width(200).url() : '/icon.png';
+
+    return (
       <SwiperSlide key={idx}>
         <img
-          src={urlFor(img).width(200).url()}
+          src={imageUrl}
           alt={`Thumbnail ${idx + 1}`}
-          style={{ borderRadius: '8px', cursor: 'pointer' }}
+          style={{
+            borderRadius: '8px',
+            cursor: 'pointer',
+            opacity: isValidImage ? 1 : 0.5,
+          }}
         />
       </SwiperSlide>
-    ))}
-  </Swiper>
+    );
+  })}
+</Swiper>
+
   </div>
 </div>
 

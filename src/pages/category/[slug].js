@@ -63,10 +63,13 @@ export default function CategoryPage({ category, currentPage, totalPages }) {
                 <div className="row">
                   <div className="col-12 col-md-5">
                     <figure>
+                 
+                       {post.image ? (
                       <img
                         src={urlFor(post.image).width(1200).url()}
                         alt={post.title}
                       />
+                     ) : (  <img src='/icon.png' style={{ opacity: 0.5 }}  alt='Placeholder Image' />     )}
                     </figure>
                   </div>
                   <div className="col-12 col-md-7">
