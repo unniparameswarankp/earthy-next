@@ -2688,7 +2688,7 @@ display: none;
   }
 }
 
-.earth-image {
+.earthy-image-hld {
   position: absolute;
   top: calc( 50% + 145px );
   left: 50%;
@@ -2701,6 +2701,13 @@ display: none;
   }
   @media (max-width: 900px) {
     top: calc( 100% - 200px );
+  }
+  img{
+     width: 500px;
+    height: auto;
+    @media (max-width: 1050px) {
+   width: 300px;
+  }
   }
 }
 

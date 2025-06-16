@@ -66,7 +66,7 @@ export default function EarthySection() {
       >
         <img src="/world-map.svg" alt="Map" />
       </div>
-
+      <div className="earthy-image-hld">
       <img
         src="/earth.png"
         alt="Earth"
@@ -74,6 +74,7 @@ export default function EarthySection() {
         data-depth="1.2"
         ref={(el) => (elementsRef.current[1] = el)}
       />
+      </div>
 
       <div className="text-container container">
         <h2>Earthy Project Benefits</h2>
