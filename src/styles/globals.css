@@ -1655,6 +1655,7 @@ z-index: 5;
        width: 3rem;
        height: 3rem;
        bottom: 50px;
+       left: calc(50% - 1.5rem);
     }
     svg{
       height: 100%;
