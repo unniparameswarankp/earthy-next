@@ -218,17 +218,11 @@ export default function ProductDetails({ product, relatedProducts }) {
           </div>
           <div className="col-md-6 col-12">
             <div className='text-bk'>
-              <div className='sub-title-bk'>Product</div>
+              {/* <div className='sub-title-bk'>Product</div> */}
               <h1>{product.title}</h1>
-              <p className='price-desc'>+15% GST + Freight Charges (Free delivery available only in Auckland,Wellington and Christchurch for orders above $300) </p>
-              <p className="price-bk">
-  {product.price != null
-    ? new Intl.NumberFormat('en-NZ', {
-        style: 'currency',
-        currency: 'NZD',
-      }).format(product.price)
-    : 'Price is not available'}
-</p>
+              {product.shortDescription && (
+                <p className='price-desc'>{product.shortDescription}</p>
+              )}
               <div className='count-bk'>
               <button onClick={() => setMainProductQty(qty => Math.max(1, qty - 1))}>−</button>
               <span>{mainProductQty}</span>

@@ -37,11 +37,11 @@ export async function getCategoryBySlug(slug) {
 }
 
 
-
 export async function getProductBySlug(slug) {
   return await client.fetch(
     `*[_type == "product" && slug.current == $slug][0]{
       title,
+      shortDescription, // 👈 add this line
       description,
       price,
       slug,
@@ -61,7 +61,7 @@ export async function getProductBySlug(slug) {
         title,
         slug
       },
-    pdfFile{
+      pdfFile {
         asset->{
           url
         }
@@ -70,3 +70,4 @@ export async function getProductBySlug(slug) {
     { slug }
   );
 }
+
