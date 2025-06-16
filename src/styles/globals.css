@@ -2828,7 +2828,7 @@ position: absolute;
   align-items: center!important;
   justify-content: center!important;
   margin-bottom: 2rem;
-  text-align: center;
+  text-align: center!important;
  }
 }
 .bk-home-our-range{
