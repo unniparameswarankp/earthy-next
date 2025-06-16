@@ -1197,14 +1197,11 @@ p{
       margin: 0 0 3rem 0;
       padding:0;
       list-style: none;
+      font-size: 1.1rem;
       li{
           margin: 0;
           padding: 0 0 1rem 0;
-          a{
-              font-family: 'Bainsley';
-              line-height: 1.1;
-              font-size: 2rem;
-          }
+          font-weight: 600;
       }
   }
   .footer-socials{
@@ -1232,7 +1229,7 @@ p{
           padding: 0 0 1rem 0;
           span{
               display: inline-block;
-              font-weight: 700;
+              font-weight: 600;
               padding-right: 1rem;
           }
       }
