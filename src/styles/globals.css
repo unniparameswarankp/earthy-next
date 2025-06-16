@@ -2852,6 +2852,7 @@ h3{
 .swiper-slide-thumb-active{
   border: 1px solid #3b863e;
   border-radius: 1rem;
+  overflow: hidden;
 }
 .swiper-nav-holder{
   display: flex;
