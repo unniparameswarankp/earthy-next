@@ -170,8 +170,8 @@ const Home = ({ products }) => {
                 </div> ̰
                 <div className="wrap">
                   <div ref={textRef}>
-                    <h6>For over 70 years, NZ Cleaning Supplies has been more than just a supplier—we've been a partner in cleanliness, innovation, and sustainability. </h6>
-                    <div className="desc3">From government buildings to five-star hotels, we've powered spotless spaces with cutting-edge equipment and eco-friendly solutions. Our journey began with a simple goal: to redefine cleaning standards across New Zealand. Today, with 2000+ products, global partnerships, and a nationwide presence, we continue to push boundaries—one cleaning solution at a time. </div>
+                    <h6>At Earthy, sustainability isn’t just a feature — it’s the foundation. We design every product to reduce waste, lower chemical runoff, and support environmentally responsible practices. Whether you’re a homeowner or a facilities manager, we help you clean responsibly.</h6>
+                    <div className="desc3">From household cleaning to large-scale commercial applications, Earthy offers a complete range of solutions that deliver real results—without compromising sustainability.</div>
                   </div>
      
                   <img className='kiwy-img-2 d-md-none' src={Image70.src} alt="" />

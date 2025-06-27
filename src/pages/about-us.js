@@ -4,7 +4,6 @@ import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import iconImage from '../assets/images/leaf-icon.png';
 import cleanerImage from '../assets/images/cleaner.jpg';
 import cleaningImage from '../assets/images/cleaning.jpg'; 
@@ -82,7 +81,7 @@ const imageRef4 = useRef(null);
           <div className="row align-items-center">
             <div className="col-md-7 col-12">
               <figure ref={imageRef1}>
-                <img src={cleanerImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
+                <img src="/images/journey.jpg" alt="Our Mission" className="img-fluid rounded shadow" />
               </figure>
             </div>
             <div className="col-md-5 col-12">
@@ -109,13 +108,13 @@ const imageRef4 = useRef(null);
           <div className="row align-items-center">
             <div className="col-md-7 col-12">
               <figure ref={imageRef2}>
-              <img src={cleaningImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
+              <img src="/images/values.jpg" alt="Our Mission" className="img-fluid rounded shadow" />
               </figure>
             </div>
             <div className="col-md-5 col-12">
               <div className='text-bk'>
               <h2>Our Values</h2>
-              <p> At NZ Cleaning Supplies, we're not just selling cleaning products—we're creating a cleaner, healthier, and more sustainable future for New Zealand businesses. Whether you're a small business or a nationwide enterprise, we're here to empower you with the tools and expertise you need to succeed. </p>
+              <p>At Earthy, our values are rooted in responsibility — to people, to the planet, and to future generations. We believe that powerful cleaning shouldn’t come at the cost of environmental harm. That’s why we prioritize transparency, sustainability, and innovation in everything we do. From sourcing biodegradable ingredients to minimizing plastic waste, every choice we make is guided by our commitment to cleaner living and ethical business. We stand for integrity, impact, and a shared vision of a greener tomorrow.</p>
               <Link className="btn-1 green" href="/shop">
                 Explore Our Products
               </Link>
@@ -130,7 +129,7 @@ const imageRef4 = useRef(null);
           <div className="row align-items-center">
             <div className="col-md-7 col-12">
               <figure ref={imageRef3}>
-                <img src={cleanerImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
+                <img src="/images/mission.png" alt="Our Mission" className="img-fluid rounded shadow" />
               </figure>
             </div>
             <div className="col-md-5 col-12">
@@ -160,13 +159,13 @@ const imageRef4 = useRef(null);
           <div className="row align-items-center">
             <div className="col-md-7 col-12">
               <figure ref={imageRef4}>
-              <img src={cleaningImage.src} alt="Our Mission" className="img-fluid rounded shadow" />
+              <img src="/images/sustainabilityjourney.jpg" alt="Our Mission" className="img-fluid rounded shadow" />
               </figure>
             </div>
             <div className="col-md-5 col-12">
               <div className='text-bk'>
               <h2>Sustainability Journey</h2>
-              <p>At NZ Cleaning Supplies, sustainability isn't just a buzzword—it's at the core of everything we do. We believe in delivering high-performance cleaning solutions while protecting the planet for future generations. From eco-friendly products to energy-efficient equipment, we are committed to redefining the cleaning industry with sustainable practices. </p>
+              <p>Our journey toward sustainability began with a simple question: How can we clean without leaving a trace? From day one, Earthy has been committed to reducing environmental impact through every stage of our product lifecycle — from ingredient selection to packaging, distribution, and disposal. We continually innovate to ensure our products are not only effective but also safe for waterways, wildlife, and the wider ecosystem. As we grow, so does our commitment — with ongoing investments in biodegradable materials, refill systems, carbon-conscious logistics, and partnerships that support a circular economy. Sustainability isn’t a destination for us — it’s a journey we walk every day.</p>
               <Link className="btn-1 green" href="/shop">
                 Explore Our Products
               </Link>

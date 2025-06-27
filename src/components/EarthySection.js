@@ -87,7 +87,7 @@ export default function EarthySection() {
             { icon: "/icon1.svg", text: "Use compostable materials to reduce waste in nature" },
             { icon: "/icon2.svg", text: "Maintain a sustainable living planet using recyclable materials only" },
             { icon: "/icon3.svg", text: "Bioplastics made from plants and biodegradable substances" },
-            { icon: "/icon4.svg", text: "Cooperate with like-minded business partners to ensure every step is compliance with the lawful rules of Australia." },
+            { icon: "/icon4.svg", text: "Cooperate with like-minded business partners to ensure every step is compliance with the lawful rules of Newziland." },
           ].map((item, i) => (
             <div
               className="benefit"
