@@ -556,6 +556,61 @@ const Home = ({ products }) => {
 
       <EarthySection />
 
+      <section className='bk-earthy-logos-slider'>
+        <div className='container'>
+           <Swiper
+            modules={[Navigation]}
+            navigation
+            pagination={{ clickable: true }}
+            loop={true} 
+
+
+            // Responsive breakpoints
+            breakpoints={{
+              0: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+              },
+              575: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+            }}
+          >
+             <SwiperSlide>
+              <figure>
+                <img src="/images/logo-01.png" alt="Logo 1" />
+              </figure>
+            </SwiperSlide>
+            <SwiperSlide>
+              <figure>
+                <img src="/images/logo-02.png" alt="Logo 2" />
+              </figure>
+            </SwiperSlide>
+            <SwiperSlide>
+              <figure>
+                <img src="/images/logo-03.png" alt="Logo 3" />
+              </figure>
+            </SwiperSlide>
+            <SwiperSlide>
+              <figure>
+                <img src="/images/logo-04.png" alt="Logo 4" />
+              </figure>
+            </SwiperSlide>
+
+          </Swiper>
+
+        </div>
+      </section>
+
 
 
 
